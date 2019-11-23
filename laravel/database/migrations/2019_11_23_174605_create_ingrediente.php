@@ -14,7 +14,7 @@ class CreateIngrediente extends Migration
     public function up()
     {
         Schema::create('ingrediente', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_ingrediente'); //primaria
             $table->string('nome');
             $table->text('descricao');
         });

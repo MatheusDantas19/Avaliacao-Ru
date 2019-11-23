@@ -14,8 +14,8 @@ class CreateAluno extends Migration
     public function up()
     {
         Schema::create('aluno', function (Blueprint $table) {
-            $table->integer('id');
-            $table->primary('id');
+            $table->integer('id_aluno')->unsigned()->length(10);
+            $table->primary('id_aluno'); //primaria
             $table->string('nome');
             $table->string('curso');
             $table->string('senha');
