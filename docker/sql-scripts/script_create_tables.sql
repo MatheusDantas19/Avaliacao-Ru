@@ -57,7 +57,7 @@ CREATE TABLE aluno_abre_reclamacao (
     data DATETIME NOT NULL,
     PRIMARY KEY (matricula, id_reclamacao),
     FOREIGN KEY (matricula) REFERENCES aluno (matricula) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE admin_elabora_resposta (
@@ -82,22 +82,22 @@ CREATE TABLE resposta_responde_reclamacao (
     id_reclamacao INT(11) NOT NULL,
     PRIMARY KEY (id_resposta, id_reclamacao),
     FOREIGN KEY(id_resposta) REFERENCES resposta(id_resposta) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE reclamacao_denuncia_restaurante (
     id_reclamacao INT(11) NOT NULL,
     id_restaurante INT(11) NOT NULL,
     PRIMARY KEY(id_reclamacao, id_restaurante),
-    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (id_restaurante) REFERENCES restaurante (id_restaurante) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE restaurante_serve_prato (
     id_restaurante INT(11) NOT NULL,
     id_prato INT(11) NOT NULL,
-    turno TEXT NOT NULL,
-    dia_semana TEXT NOT NULL,
+    turno VARCHAR(3),
+    dia_semana VARCHAR(3),
     PRIMARY KEY(id_restaurante, id_prato, turno, dia_semana),
     FOREIGN KEY (id_restaurante) REFERENCES restaurante (id_restaurante) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (id_prato) REFERENCES prato (id_prato) ON UPDATE CASCADE ON DELETE CASCADE
@@ -107,7 +107,7 @@ CREATE TABLE reclamacao_cita_prato (
     id_reclamacao INT(11) NOT NULL,
     id_prato INT(11) NOT NULL,
     PRIMARY KEY (id_reclamacao, id_prato),
-    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id_reclamacao) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (id_prato) REFERENCES prato (id_prato) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
