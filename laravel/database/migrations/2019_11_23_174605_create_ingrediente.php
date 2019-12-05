@@ -16,7 +16,7 @@ class CreateIngrediente extends Migration
         Schema::create('ingrediente', function (Blueprint $table) {
             $table->increments('id_ingrediente'); //primaria
             $table->string('nome');
-            $table->text('descricao');
+            $table->text('descricao')->nullable();
         });
     }
 

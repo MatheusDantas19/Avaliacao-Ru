@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class IngredientePrato extends Migration
+class CreatePratoContemIngrediente extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class IngredientePrato extends Migration
      */
     public function up()
     {
-        Schema::create('ingrediente_prato', function (Blueprint $table) {
-            $table->integer('id_prato')->unsigned()->unique();
-            $table->integer('id_ingrediente')->unsigned()->unique();
-        });
+        Schema::create('prato_contem_ingrediente', function (Blueprint $table) {
+            $table->integer('id_prato')->unsigned()->length(10);
 
-        Schema::table('ingrediente_prato',function (Blueprint $table){
+            $table->integer('id_ingrediente')->unsigned()->length(10);
+
+            $table->primary(array('id_prato', 'id_ingrediente'));
+
             $table->foreign('id_prato')
                 ->references('id_prato')
                 ->on('prato')
@@ -30,7 +31,6 @@ class IngredientePrato extends Migration
                 ->on('ingrediente')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
         });
     }
 
@@ -42,8 +42,6 @@ class IngredientePrato extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::drop('ingrediente_prato');
-        Schema::enableForeignKeyConstraints();
-
+        Schema::dropIfExists('prato_contem_ingrediente');
     }
 }
