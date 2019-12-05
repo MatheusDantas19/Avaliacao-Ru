@@ -14,11 +14,11 @@ class CreateAluno extends Migration
     public function up()
     {
         Schema::create('aluno', function (Blueprint $table) {
-            $table->integer('id_aluno')->unsigned()->length(10);
-            $table->primary('id_aluno'); //primaria
+            $table->integer('matricula')->unsigned()->length(10);
+            $table->primary('matricula'); //primaria
             $table->string('nome');
-            $table->string('curso');
-            $table->string('senha');
+            $table->string('curso',30);
+            $table->integer('senha')->unsigned()->length(10);
         });
     }
 
@@ -29,6 +29,7 @@ class CreateAluno extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('aluno');
     }
 }

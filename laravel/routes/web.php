@@ -12,5 +12,10 @@
 */
 
 Route::get('/', 'MainController@index');
+
 Route::get('/signup', 'MainController@signup');
+Route::post('/signup', 'MainController@store');
+
 Route::get('/login', 'MainController@login');
+Route::post('/login', 'MainController@loginAluno');
+

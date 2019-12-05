@@ -17,16 +17,8 @@ class CreatePrato extends Migration
             $table->increments('id_prato');
             $table->string('nome');
             $table->text('descricao')->nullable();
-            $table->integer('status')->nullable();
-            $table->integer('id_reclamacao')->unsigned()->nullable()->unique();
-        });
+            $table->string('classificacao')->nullable();
 
-        Schema::table('prato',function (Blueprint $table){
-            $table->foreign('id_reclamacao')
-                ->references('id_reclamacao')
-                ->on('reclamacao')
-                ->onDelete('set null')
-                ->onUpdate('cascade');
         });
     }
 
@@ -37,8 +29,6 @@ class CreatePrato extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('prato');
-        Schema::enableForeignKeyConstraints();
     }
 }

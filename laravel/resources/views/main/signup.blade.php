@@ -7,6 +7,7 @@
 @section('conteudo')
 <div class="row">
     <form class="col s12" method="POST">
+        @csrf
         <div class="row">
             <div class="input-field col s6">
                 <input id="nome" name="nome" type="text" class="validate"
