@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('main')
 
 @section('cabecalho')
     Bem Vindo

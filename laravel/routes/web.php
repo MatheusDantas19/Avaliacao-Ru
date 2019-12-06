@@ -13,9 +13,12 @@
 
 Route::get('/', 'MainController@index');
 
-Route::get('/signup', 'MainController@signup');
-Route::post('/signup', 'MainController@store');
+Route::get('/signup', 'MainController@signupGet');
+Route::post('/signup', 'MainController@signupPost');
 
-Route::get('/login', 'MainController@login');
-Route::post('/login', 'MainController@loginAluno');
+Route::get('/login', 'MainController@loginAlunoGet');
+Route::post('/login', 'MainController@loginAlunoPost');
+
+Route::get('/dashboard','MainController@dashboard');
+Route::get('/logout','MainController@logout');
 

@@ -1,8 +1,9 @@
-@extends('layout')
+@extends('main')
 @section('cabecalho')
-    Criar Conta
+    Login
 @endsection
 @section('conteudo')
+{{$mensagem}}
 <div class="row">
     <form class="col s12" method="POST">
         @csrf
