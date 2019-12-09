@@ -19,19 +19,24 @@ class MainController extends Controller{
         return view('main.login');
     }
 
+    public function loginAdmin (Request $request){
+        return view('admin.login');
+    }
+
     public function loginAluno (Request $request){
         $aluno = Aluno::where('matricula', $request->matricula)->first();
         if($aluno)
             var_dump($aluno->nome);
     }
-    
+
     public function store(Request $request){
         $aluno = Aluno::create($request->all());
-        
+
         $request->session()->flash('mensagem','Aluno cadastrado com sucesso');
 
         return redirect('/');
     }
+
 }
 
 ?>

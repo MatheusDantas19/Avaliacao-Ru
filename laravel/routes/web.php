@@ -19,3 +19,5 @@ Route::post('/signup', 'MainController@store');
 Route::get('/login', 'MainController@login');
 Route::post('/login', 'MainController@loginAluno');
 
+Route::get('/loginAdmin', 'AdminController@login');
+Route::post('/loginAdmin', 'AdminController@loginAdmin');
