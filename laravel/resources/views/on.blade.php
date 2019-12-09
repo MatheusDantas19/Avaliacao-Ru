@@ -16,7 +16,7 @@
         <div class="container">
             <a href="/" class="brand-logo">Ru Restaurante Universitário</a>
             <a href="/dashboard" data-target="menu-responsive" class="sidenav-trigger">
-                <i class="material-icons">Incio</i>
+                <i class="material-icons">menu</i>
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/pratos">Pratos</a></li>
@@ -31,9 +31,12 @@
 </nav>
 
 <ul class="sidenav" id="menu-responsive">
-    <li><a href="/signup">Sign Up</a></li>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/quemsomos">Quem Somos</a></li>
+    <li><a href="/pratos">Pratos</a></li>
+    <li><a href="/reclamacao">Reclamação</a></li>
+    <li><a href="/alterar">Alterar Dados</a></li>
+    <li><a href="/contato">Contato/Ajuda</a></li>
+    <li><a href="/logout">Logout</a></li>
+    
 </ul>
 
 <div class="container">
