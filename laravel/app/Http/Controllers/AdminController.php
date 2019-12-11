@@ -9,8 +9,13 @@ class AdminController extends Controller
 {
 
     public function loginAdminGet(Request $request){
-        $mensagem = $request->session()->get('mensagem');
-        return view('admin.login', compact('mensagem'));
+        if ($request->session()->exists('login')) {
+        return redirect('/dashboard');
+        }
+        else{
+            $mensagem = $request->session()->get('mensagem');
+            return view('admin.login', compact('mensagem'));
+        }
     }
 
     public function loginAdminPost (Request $request){

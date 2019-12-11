@@ -13,14 +13,14 @@
 
 Route::get('/', 'MainController@index');
 
-Route::get('/signup', 'MainController@signupGet');
-Route::post('/signup', 'MainController@signupPost');
+Route::get('/signup', 'AlunoController@signupGet');
+Route::post('/signup', 'AlunoController@signupPost');
 
-Route::get('/login', 'MainController@loginAlunoGet');
-Route::post('/login', 'MainController@loginAlunoPost');
+Route::get('/login', 'AlunoController@loginAlunoGet');
+Route::post('/login', 'AlunoController@loginAlunoPost');
 
-Route::get('/dashboard','MainController@dashboard');
-Route::get('/logout','MainController@logout');
+Route::get('/dashboard','AlunoController@dashboard');
+Route::get('/logout','AlunoController@logout');
 
 //metodos loginAdmin
 Route::get('/loginAdmin', 'AdminController@loginAdminGet');

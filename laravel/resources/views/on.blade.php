@@ -14,7 +14,7 @@
 <nav>
     <div class="nav-wrapper">
         <div class="container">
-            <a href="/" class="brand-logo">Ru Restaurante Universitário</a>
+            <a href="/dashboard" class="brand-logo">Ru Restaurante Universitário</a>
             <a href="/dashboard" data-target="menu-responsive" class="sidenav-trigger">
                 <i class="material-icons">Incio</i>
             </a>

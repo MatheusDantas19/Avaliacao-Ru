@@ -5,6 +5,6 @@
 @endsection
 
 @section('conteudo')
-{{$mensagem}}
+
 @endsection
 
