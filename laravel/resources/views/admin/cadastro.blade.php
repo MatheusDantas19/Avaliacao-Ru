@@ -1,4 +1,4 @@
-@extends('main')
+@extends('admin.main')
 @section('cabecalho')
     Cadastro de Administrador
 @endsection

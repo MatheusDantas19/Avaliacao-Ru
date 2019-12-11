@@ -11,8 +11,6 @@
 |
 */
 
-use Illuminate\Routing\Route;
-
 Route::get('/', 'MainController@index');
 
 Route::get('/signup', 'MainController@signupGet');
