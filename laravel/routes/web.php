@@ -34,3 +34,4 @@ Route::get('/mainAdmin', 'AdminController@main');
 
 //metodos cadastroAdmin
 Route::get('/cadastroAdmin', 'AdminController@cadastroAdminGet');
+Route::post('/cadastroAdmin', 'AdminController@cadastroAdminPost');

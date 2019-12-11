@@ -7,13 +7,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function loginAdminGet(){
-        return view('admin.login');
+
+    public function loginAdminGet(Request $request){
+        $mensagem = $request->session()->get('mensagem');
+        return view('admin.login', compact('mensagem'));
     }
 
     public function loginAdminPost (Request $request){
@@ -42,11 +39,32 @@ class AdminController extends Controller
 
     public function cadastroAdminGet (Request $request){
         if ($request->session()->exists('loginAdmin')) {
-            return view("admin.cadastro");
+            $mensagem = $request->session()->get('mensagem');
+            return view("admin.cadastro", compact("mensagem"));
         } else {
             return redirect('/loginAdmin');
         }
     }
+
+    public function cadastroAdminPost (Request $request){
+        if ($request->session()->exists('loginAdmin')){
+            $nome = $request->nome;
+            $senha = $request->senha;
+            if($nome and $senha){
+                $admin = Admin::create($request->all());
+                $mensagem = $request->session()->flash('mensagem', 'Administrador cadastrado com sucesso');
+                return redirect('/cadastroAdmin');
+            }
+            else{
+                $mensagem = $request->session()->flash('mensagem', 'Os dados não podem estar em branco!');
+                return redirect('/cadastroAdmin');
+            }
+        }
+        else{
+            redirect('/loginAdmin');
+        }
+    }
+
 
     public function main(Request $request){
         if ($request->session()->exists('loginAdmin')) {

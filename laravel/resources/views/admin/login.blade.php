@@ -3,6 +3,7 @@
     Login Administrador
 @endsection
 @section('conteudo')
+{{$mensagem}}
 <div class="row">
     <form class="col s12" method="POST">
         @csrf

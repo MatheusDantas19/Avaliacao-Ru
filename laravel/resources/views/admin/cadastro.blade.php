@@ -3,6 +3,7 @@
     Cadastro de Administrador
 @endsection
 @section('conteudo')
+{{$mensagem}}
 <div class="row">
     <form class="col s12" method="POST">
         @csrf
@@ -22,7 +23,7 @@
                 </div>
             </div>
 
-            <button class="btn waves-effect waves-light" type="submit">Logar
+            <button class="btn waves-effect waves-light" type="submit">Cadastrar
                 <i class="material-icons right">send</i>
             </button>
         </div>

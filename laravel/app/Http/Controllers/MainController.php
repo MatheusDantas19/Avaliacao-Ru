@@ -52,15 +52,31 @@ class MainController extends Controller
         }
     }
 
-    public function loginAdmin (Request $request){
+    public function signupPost(Request $request) //rota '/signup' POST
+    {
+        if ($request->session()->exists('login')) {
+            return redirect('/dashboard');
+        } else {
+            $nome = $request->nome;
+            $matricula = $request->matricula;
+            $curso = $request->curso;
+            $senha = $request->senha;
+            if ($nome and $matricula and $curso and $senha) {
+                $aluno = Aluno::create($request->all());
+                $request->session()->flash('mensagem', 'Aluno cadastrado com sucesso');
+                return redirect('/');
+            }else{
+                $request->session()->flash('mensagem', 'Os dados não podem está em branco!');
+                return redirect('/signup');
+            }
+
+        }
+    }
+
+    public function loginAdmin (){
         return view('admin.login');
     }
 
-    public function store(Request $request){
-        $aluno = Aluno::create($request->all());
-
-        $request->session()->flash('mensagem','Aluno cadastrado com sucesso');
-    }
 
     public function dashboard(Request $request) //rota '/dashboard'
     {
