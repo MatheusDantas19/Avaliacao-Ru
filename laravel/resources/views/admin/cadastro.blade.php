@@ -1,6 +1,6 @@
 @extends('main')
 @section('cabecalho')
-    Login Administrador
+    Cadastro de Administrador
 @endsection
 @section('conteudo')
 <div class="row">

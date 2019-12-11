@@ -17,8 +17,6 @@ class MainController extends Controller
         }
     }
 
-    
-
     public function loginAlunoGet(Request $request)
     { //rota '/login' GET
         if ($request->session()->exists('login')) {
@@ -44,7 +42,6 @@ class MainController extends Controller
         }
     }
 
-
     public function signupGet(Request $request)
     { //rota '/signup' GET
         if ($request->session()->exists('login')) {
@@ -55,43 +52,15 @@ class MainController extends Controller
         }
     }
 
-<<<<<<< HEAD
     public function loginAdmin (Request $request){
         return view('admin.login');
-    }
-
-    public function loginAluno (Request $request){
-        $aluno = Aluno::where('matricula', $request->matricula)->first();
-        if($aluno)
-            var_dump($aluno->nome);
     }
 
     public function store(Request $request){
         $aluno = Aluno::create($request->all());
 
         $request->session()->flash('mensagem','Aluno cadastrado com sucesso');
-=======
-    public function signupPost(Request $request) //rota '/signup' POST
-    {
-        if ($request->session()->exists('login')) {
-            return redirect('/dashboard');
-        } else {
-            $nome = $request->nome;
-            $matricula = $request->matricula;
-            $curso = $request->curso;
-            $senha = $request->senha;
-            if ($nome and $matricula and $curso and $senha) {
-                $aluno = Aluno::create($request->all());
-                $request->session()->flash('mensagem', 'Aluno cadastrado com sucesso');
-                return redirect('/');
-            }else{
-                $request->session()->flash('mensagem', 'Os dados não podem está em branco!');
-                return redirect('/signup');
-            }
-            
-        }
     }
->>>>>>> master
 
     public function dashboard(Request $request) //rota '/dashboard'
     {

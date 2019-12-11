@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Routing\Route;
+
 Route::get('/', 'MainController@index');
 
 Route::get('/signup', 'MainController@signupGet');
@@ -22,5 +24,15 @@ Route::post('/login', 'MainController@loginAlunoPost');
 Route::get('/dashboard','MainController@dashboard');
 Route::get('/logout','MainController@logout');
 
-Route::get('/loginAdmin', 'AdminController@login');
-Route::post('/loginAdmin', 'AdminController@loginAdmin');
+//metodos loginAdmin
+Route::get('/loginAdmin', 'AdminController@loginAdminGet');
+Route::post('/loginAdmin', 'AdminController@loginAdminPost');
+
+//metodos logoutAdmin
+Route::get('/logoutAdmin', 'AdminController@logout');
+
+//metodos mainAdmin
+Route::get('/mainAdmin', 'AdminController@main');
+
+//metodos cadastroAdmin
+Route::get('/cadastroAdmin', 'AdminController@cadastroAdminGet');
