@@ -14,7 +14,7 @@
 <nav>
     <div class="nav-wrapper">
         <div class="container">
-            <a href="/" class="brand-logo">Feedback</a>
+            <a href="/" class="brand-logo">Feedback-RU</a>
             <a href="#" data-target="menu-responsive" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
@@ -22,6 +22,7 @@
                 <li><a href="/signup">Sign Up</a></li>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/quemsomos">Quem Somos</a></li>
+                <li><a href="/loginAdmin">Administrador</a></li>
             </ul>
         </div>
 

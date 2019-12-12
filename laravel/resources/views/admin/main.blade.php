@@ -10,33 +10,30 @@
     <title>FeedBack - Ru</title>
 </head>
 <body>
-
 <nav>
     <div class="nav-wrapper">
         <div class="container">
-            <a href="/dashboard" class="brand-logo">Ru Restaurante Universitário</a>
-            <a href="/dashboard" data-target="menu-responsive" class="sidenav-trigger">
+            <a href="mainAdmin" class="brand-logo">Feedback-RU</a>
+            <a href="#" data-target="menu-responsive" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/pratos">Pratos</a></li>
-                <li><a href="/reclamacao">Reclamação</a></li>
-                <li><a href="/alterar">Alterar Dados</a></li>
-                <li><a href="/contato">Contato/Ajuda</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/cadastroAdmin">Administradores</a></li>
+                <li><a href="/cadastroRU">Gerenciar RU</a></li>
+                <li><a href="/cadastroPrato">Gerenciar Pratos</a></li>
+                <li><a href="/cadastroIngrediente">Gerenciar Ingredientes</a></li>
+                <li><a href="/logoutAdmin">Sair</a></li>
             </ul>
         </div>
 
     </div>
 </nav>
 
+
 <ul class="sidenav" id="menu-responsive">
-    <li><a href="/pratos">Pratos</a></li>
-    <li><a href="/reclamacao">Reclamação</a></li>
-    <li><a href="/alterar">Alterar Dados</a></li>
-    <li><a href="/contato">Contato/Ajuda</a></li>
-    <li><a href="/logout">Logout</a></li>
-    
+    <li><a href="/signup">Sign Up</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/quemsomos">Quem Somos</a></li>
 </ul>
 
 <div class="container">

@@ -14,10 +14,10 @@ class CreateAdmin extends Migration
     public function up()
     {
         Schema::create('admin', function (Blueprint $table) {
-            $table->integer('id_admin')->unsigned()->length(10);
-            $table->primary('id_admin');
+            $table->increments('id_admin');
             $table->string('nome');
-            $table->integer('senha')->unsigned()->length(10);
+            $table->string('senha');
+
         });
     }
 
