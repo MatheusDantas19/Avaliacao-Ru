@@ -15,9 +15,10 @@ class CreateAdmin extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->increments('id_admin');
-            $table->string('nome')->unique();
+            $table->string('nome');
             $table->string('senha');
 
+            $table->index(['nome','senha']);
         });
     }
 
