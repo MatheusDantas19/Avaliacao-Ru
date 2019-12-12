@@ -39,3 +39,7 @@ Route::post('/createAdmin', 'AdminController@createPost');
 //metodos updateAdmin
 Route::get('/updateAdmin', 'AdminController@updateGet');
 Route::post('/updateAdmin', 'AdminController@updatePost');
+
+//metodos updateAdmin
+Route::get('/deleteAdmin', 'AdminController@deleteGet');
+Route::post('/deleteAdmin', 'AdminController@deletePost');

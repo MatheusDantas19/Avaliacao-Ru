@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+
     public function main(Request $request){
         if ($request->session()->exists('loginAdmin')) {
             $nome = $request->session()->get('nome');
@@ -116,5 +117,36 @@ class AdminController extends Controller
         }
     }
 
+    public function deleteGet(Request $request){
+        if ($request->session()->exists('loginAdmin')) {
+            $mensagem = $request->session()->get('mensagem');
+            $nome = $request->session()->get('nome');
+            return view("admin.delete", compact(['mensagem','nome']));
+        } else {
+            return redirect('/loginAdmin');
+        }
+    }
+
+
+    public function deletepost(Request $request){
+        if ($request->session()->exists('loginAdmin')) {
+            $admin = Admin::where('id_admin',$request->session()->get('id_admin'))
+            ->where('nome', $request->nome)->where('senha', $request->senha)->first();
+
+            if($admin){
+                DB::table('admin')->where('id_admin', $request->session()->get('id_admin'))->delete();
+                $request->session()->flush();
+                return redirect('/loginAdmin');
+            }
+            else{
+                $request->session()->put('mensagem','corrija seus dados de login e senha');
+                return redirect('/deleteAdmin');
+            }
+        }
+        else {
+            return redirect('/loginAdmin');
+            }
+
+    }
 
 }
