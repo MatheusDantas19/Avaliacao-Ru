@@ -4,11 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+    public function main(Request $request){
+        if ($request->session()->exists('loginAdmin')) {
+            $nome = $request->session()->get('nome');
+            $id_admin = $request->session()->get('id_admin');
+            return view("admin.main", compact(['nome','id_admin']));
+        }
+        else {
+            return redirect('/loginAdmin');
+        }
+    }
 
-    public function loginAdminGet(Request $request){
+    public function loginGet(Request $request){
         if ($request->session()->exists('login')) {
         return redirect('/dashboard');
         }
@@ -18,10 +29,12 @@ class AdminController extends Controller
         }
     }
 
-    public function loginAdminPost (Request $request){
+    public function loginPost (Request $request){
         $admin = Admin::where('nome', $request->nome)->where('senha', $request->senha)->first();
         if($admin){
-            $request->session()->put('loginAdmin', $request->nome);
+            $request->session()->put('loginAdmin', true);
+            $request->session()->put('nome',$admin->nome);
+            $request->session()->put('id_admin',$admin->id_admin);
 
             return redirect('/mainAdmin');
         }
@@ -33,7 +46,7 @@ class AdminController extends Controller
 
     public function logout (Request $request){
         if ($request->session()->exists('loginAdmin')){
-            $request->session()->forget('login');
+            $request->session()->flush();
             return redirect('/');
         }
         else{
@@ -42,27 +55,27 @@ class AdminController extends Controller
 
     }
 
-    public function cadastroAdminGet (Request $request){
+    public function createGet (Request $request){
         if ($request->session()->exists('loginAdmin')) {
             $mensagem = $request->session()->get('mensagem');
-            return view("admin.cadastro", compact("mensagem"));
+            return view("admin.create", compact("mensagem"));
         } else {
             return redirect('/loginAdmin');
         }
     }
 
-    public function cadastroAdminPost (Request $request){
+    public function createPost (Request $request){
         if ($request->session()->exists('loginAdmin')){
             $nome = $request->nome;
             $senha = $request->senha;
             if($nome and $senha){
                 $admin = Admin::create($request->all());
                 $mensagem = $request->session()->flash('mensagem', 'Administrador cadastrado com sucesso');
-                return redirect('/cadastroAdmin');
+                return redirect('/createAdmin');
             }
             else{
                 $mensagem = $request->session()->flash('mensagem', 'Os dados não podem estar em branco!');
-                return redirect('/cadastroAdmin');
+                return redirect('/createAdmin');
             }
         }
         else{
@@ -70,31 +83,38 @@ class AdminController extends Controller
         }
     }
 
-    public function atualizacaoAdminGet(Request $request){
-        if ($request->session()->exists('loginAdmin')){
-            $nome = $request->nome;
-            $senha = $request->senha;
-            if($nome and $senha){
-                $admin = Admin::create($request->all());
-                $mensagem = $request->session()->flash('mensagem', 'Administrador cadastrado com sucesso');
-                return redirect('/cadastroAdmin');
-            }
-            else{
-                $mensagem = $request->session()->flash('mensagem', 'Os dados não podem estar em branco!');
-                return redirect('/cadastroAdmin');
-            }
-        }
-        else{
-            redirect('/loginAdmin');
-        }
-    }
-
-    public function main(Request $request){
+    public function updateGet(Request $request){
         if ($request->session()->exists('loginAdmin')) {
-            $nome = $request->session()->get('loginAdmin');
-            return view("admin.main", compact('nome'));
+            $mensagem = $request->session()->get('mensagem');
+            $nome_ant = $request->session()->get('nome');
+            return view("admin.update", compact(['mensagem','id_admin','nome_ant']));
         } else {
             return redirect('/loginAdmin');
         }
     }
+
+    public function updatePost(Request $request){
+        $admin = Admin::where('id_admin',$request->session()->get('id_admin'))
+            ->where('nome', $request->nome)->where('senha', $request->senha)->first();
+        if($admin){
+            $teste = Admin::where('nome', $request->nome_novo)->where('senha', $request->senha_nova)->first();
+            if(!$teste){
+                $affected = DB::table('admin')->where('id_admin',$admin->id_admin)
+                    ->update(['nome'=>$request->nome_novo,'senha'=>$request->senha_nova]);
+                    $request->session()->put('mensagem','dados alterados, teste seu login!');
+                    $request->session()->put('nome',$request->nome_novo);
+                    return redirect('/updateAdmin');
+            }
+            else{
+                $request->session()->put('mensagem','escolha um novo nome ou outra senha');
+                return redirect('/updateAdmin');
+            }
+        }
+        else{
+            $request->session()->put('mensagem','corrija seus dados de login e senha antigos');
+            return redirect('/updateAdmin');
+        }
+    }
+
+
 }
