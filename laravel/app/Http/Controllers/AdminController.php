@@ -21,7 +21,7 @@ class AdminController extends Controller
     public function loginAdminPost (Request $request){
         $admin = Admin::where('nome', $request->nome)->where('senha', $request->senha)->first();
         if($admin){
-            $request->session()->put('loginAdmin', '$request->nome');
+            $request->session()->put('loginAdmin', $request->nome);
 
             return redirect('/mainAdmin');
         }
@@ -70,10 +70,29 @@ class AdminController extends Controller
         }
     }
 
+    public function atualizacaoAdminGet(Request $request){
+        if ($request->session()->exists('loginAdmin')){
+            $nome = $request->nome;
+            $senha = $request->senha;
+            if($nome and $senha){
+                $admin = Admin::create($request->all());
+                $mensagem = $request->session()->flash('mensagem', 'Administrador cadastrado com sucesso');
+                return redirect('/cadastroAdmin');
+            }
+            else{
+                $mensagem = $request->session()->flash('mensagem', 'Os dados não podem estar em branco!');
+                return redirect('/cadastroAdmin');
+            }
+        }
+        else{
+            redirect('/loginAdmin');
+        }
+    }
 
     public function main(Request $request){
         if ($request->session()->exists('loginAdmin')) {
-            return view("admin.main", ['nome','$request=>loginAdmin']);
+            $nome = $request->session()->get('loginAdmin');
+            return view("admin.main", compact('nome'));
         } else {
             return redirect('/loginAdmin');
         }
