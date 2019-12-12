@@ -20,6 +20,12 @@ Route::get('/login', 'AlunoController@loginAlunoGet');
 Route::post('/login', 'AlunoController@loginAlunoPost');
 
 Route::get('/dashboard','AlunoController@dashboard');
+
+Route::get('/alterar','AlunoController@alterarGet');
+Route::post('/alterar','AlunoController@alterarPost');
+
+Route::get('/deletar','AlunoController@deletar');
+
 Route::get('/logout','AlunoController@logout');
 
 //metodos loginAdmin
