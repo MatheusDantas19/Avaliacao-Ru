@@ -28,6 +28,9 @@ Route::get('/deletar','AlunoController@deletar');
 
 Route::get('/logout','AlunoController@logout');
 
+Route::get('/reclamacao','AlunoController@reclamacaoGet');
+Route::post('/reclamacao','AlunoController@reclamacaoPost');
+
 //metodos mainAdmin
 Route::get('/mainAdmin', 'AdminController@main');
 
