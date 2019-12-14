@@ -18,11 +18,15 @@
         <li><a href="/deleteAdmin">Excluir sua conta</a></li>
     </ul>
     <ul id="dropRU" class="dropdown-content">
-        <li><a href="/cadastroAdmin">Cadastrar novo RU</a></li>
+        <li><a href="/createRU">Cadastrar novo RU</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Alterar informações de RU</a></li>
+        <li><a href="/updateAdminRU">Administrar novo RU</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Excluir RU</a></li>
+        <li><a href="updateRU">Alterar dados de RU</a></li>
+        <li class="divider"></li>
+        <li><a href="/deleteAdminRU">Deixar de Administrar um RU</a></li>
+        <li class="divider"></li>
+        <li><a href="/deleteRU">Excluir RU</a></li>
     </ul>
     <ul id="dropPrato" class="dropdown-content">
         <li><a href="/cadastroAdmin">Cadastrar novo Prato</a></li>
