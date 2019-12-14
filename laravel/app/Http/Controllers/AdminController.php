@@ -22,8 +22,8 @@ class AdminController extends Controller
     }
 
     public function loginGet(Request $request){
-        if ($request->session()->exists('login')) {
-        return redirect('/dashboard');
+        if ($request->session()->exists('loginAdmin')) {
+        return redirect('/mainAdmin');
         }
         else{
             $mensagem = $request->session()->get('mensagem');
@@ -147,7 +147,6 @@ class AdminController extends Controller
         else {
             return redirect('/loginAdmin');
             }
-
     }
     public function criarpratoGet(Request $request){
         return view('admin.criarprato');

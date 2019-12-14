@@ -15,9 +15,9 @@ class CreateRestaurante extends Migration
     {
         Schema::create('restaurante', function (Blueprint $table) {
             $table->increments('id_restaurante'); //primaria
-            $table->string('campus',30);
-            $table->string('setor',30);
-            $table->string('local',30);
+            $table->string('campus',128);
+            $table->string('setor',128);
+            $table->string('local',128);
         });
     }
 

@@ -18,25 +18,33 @@
         <li><a href="/deleteAdmin">Excluir sua conta</a></li>
     </ul>
     <ul id="dropRU" class="dropdown-content">
-        <li><a href="/cadastroAdmin">Cadastrar novo RU</a></li>
+        <li><a href="/createRU">Cadastrar novo RU</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Alterar informações de RU</a></li>
+        <li><a href="/updateAdminRU">Administrar novo RU</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Excluir RU</a></li>
+        <li><a href="updateRU">Alterar dados de RU</a></li>
+        <li class="divider"></li>
+        <li><a href="/deleteAdminRU">Deixar de Administrar um RU</a></li>
+        <li class="divider"></li>
+        <li><a href="/deleteRU">Excluir RU</a></li>
     </ul>
     <ul id="dropPrato" class="dropdown-content">
+<<<<<<< HEAD
         <li><a href="/criarprato">Cadastrar novo Prato</a></li>
+=======
+        <li><a href="#!">Cadastrar novo Prato</a></li>
+>>>>>>> a4132ff266236f24fd26c6d220691a0b85f3c6da
         <li class="divider"></li>
         <li><a href="#!">Alterar informações de Prato</a></li>
         <li class="divider"></li>
         <li><a href="#!">Excluir Prato</a></li>
     </ul>
     <ul id="dropIngrediente" class="dropdown-content">
-        <li><a href="/cadastroAdmin">Cadastrar novo Ingrediente</a></li>
+        <li><a href="/createIngrediente">Cadastrar novo Ingrediente</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Alterar informações de Ingrediente</a></li>
+        <li><a href="/updateIngrediente">Alterar informações de Ingrediente</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Excluir Ingrediente</a></li>
+        <li><a href="/deleteIngrediente">Excluir Ingrediente</a></li>
     </ul>
     <ul id="dropReclamacao" class="dropdown-content">
             <li><a href="/cadastroAdmin">Responder</a></li>

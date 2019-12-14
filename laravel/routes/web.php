@@ -28,31 +28,70 @@ Route::get('/deletar','AlunoController@deletar');
 
 Route::get('/logout','AlunoController@logout');
 
-//metodos mainAdmin
+//metodos admin
+//metodos main
 Route::get('/mainAdmin', 'AdminController@main');
 
-//metodos loginAdmin
+//metodos login
 Route::get('/loginAdmin', 'AdminController@loginGet');
 Route::post('/loginAdmin', 'AdminController@loginPost');
 
-//metodos logoutAdmin
+//metodos logout
 Route::get('/logoutAdmin', 'AdminController@logout');
 
-//metodos cadastroAdmin
+//metodos cadastro
 Route::get('/createAdmin', 'AdminController@createGet');
 Route::post('/createAdmin', 'AdminController@createPost');
 
-//metodos updateAdmin
+//metodos update
 Route::get('/updateAdmin', 'AdminController@updateGet');
 Route::post('/updateAdmin', 'AdminController@updatePost');
 
-//metodos updateAdmin
+//metodos delete
 Route::get('/deleteAdmin', 'AdminController@deleteGet');
 Route::post('/deleteAdmin', 'AdminController@deletePost');
 
+<<<<<<< HEAD
 //metodos prato
 Route::get('/pratos', 'AlunoController@pratos');
 
 //metodo criarprato
 Route::get('/criarprato', 'AdminController@criarpratoGet');
 Route::post('/criarprato', 'AdminController@criarpratoPost');
+=======
+
+//metodos Restaurante
+//create
+Route::get('/createRU', 'RestauranteController@createGet');
+Route::post('/createRU', 'RestauranteController@createPost');
+
+//updateAdmin
+Route::get('/updateAdminRU', 'RestauranteController@updateAdminGet');
+Route::post('/updateAdminRU', 'RestauranteController@updateAdminPost');
+
+//update
+Route::get('/updateRU', 'RestauranteController@updateGet');
+Route::post('/updateRU', 'RestauranteController@updatePost');
+
+//deleteAdmin
+Route::get('/deleteAdminRU','RestauranteController@deleteAdminGet');
+Route::post('/deleteAdminRU','RestauranteController@deleteAdminPost');
+
+//delete
+Route::get('/deleteRU','RestauranteController@deleteGet');
+Route::post('/deleteRU','RestauranteController@deletePost');
+
+
+//metodos Ingrediente
+//create
+Route::get('/createIngrediente','IngredienteController@createGet');
+Route::post('/createIngrediente','IngredienteController@createPost');
+
+//update
+Route::get('/updateIngrediente','IngredienteController@updateGet');
+Route::post('/updateIngrediente','IngredienteController@updatePost');
+
+//delete
+Route::get('/deleteIngrediente','IngredienteController@deleteGet');
+Route::post('/deleteIngrediente','IngredienteController@deletePost');
+>>>>>>> a4132ff266236f24fd26c6d220691a0b85f3c6da
