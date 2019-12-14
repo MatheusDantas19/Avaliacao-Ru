@@ -18,6 +18,7 @@ class CreateAdmin extends Migration
             $table->string('nome');
             $table->string('senha');
 
+            $table->index(['nome','senha']);
         });
     }
 

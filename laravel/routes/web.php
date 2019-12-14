@@ -28,16 +28,24 @@ Route::get('/deletar','AlunoController@deletar');
 
 Route::get('/logout','AlunoController@logout');
 
+//metodos mainAdmin
+Route::get('/mainAdmin', 'AdminController@main');
+
 //metodos loginAdmin
-Route::get('/loginAdmin', 'AdminController@loginAdminGet');
-Route::post('/loginAdmin', 'AdminController@loginAdminPost');
+Route::get('/loginAdmin', 'AdminController@loginGet');
+Route::post('/loginAdmin', 'AdminController@loginPost');
 
 //metodos logoutAdmin
 Route::get('/logoutAdmin', 'AdminController@logout');
 
-//metodos mainAdmin
-Route::get('/mainAdmin', 'AdminController@main');
-
 //metodos cadastroAdmin
-Route::get('/cadastroAdmin', 'AdminController@cadastroAdminGet');
-Route::post('/cadastroAdmin', 'AdminController@cadastroAdminPost');
+Route::get('/createAdmin', 'AdminController@createGet');
+Route::post('/createAdmin', 'AdminController@createPost');
+
+//metodos updateAdmin
+Route::get('/updateAdmin', 'AdminController@updateGet');
+Route::post('/updateAdmin', 'AdminController@updatePost');
+
+//metodos updateAdmin
+Route::get('/deleteAdmin', 'AdminController@deleteGet');
+Route::post('/deleteAdmin', 'AdminController@deletePost');

@@ -1,6 +1,6 @@
-@extends('main')
+@extends('admin.padrao')
 @section('cabecalho')
-    Login Administrador
+    Deletar Conta
 @endsection
 @section('conteudo')
 {{$mensagem}}
@@ -23,11 +23,10 @@
                 </div>
             </div>
 
-            <button class="btn waves-effect waves-light" type="submit">Logar
+            <button class="btn waves-effect waves-light" type="submit">Excluir conta
                 <i class="material-icons right">send</i>
             </button>
         </div>
     </form>
 </div>
 @endsection
-
