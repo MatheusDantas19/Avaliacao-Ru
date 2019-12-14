@@ -74,3 +74,17 @@ Route::post('/deleteAdminRU','RestauranteController@deleteAdminPost');
 //delete
 Route::get('/deleteRU','RestauranteController@deleteGet');
 Route::post('/deleteRU','RestauranteController@deletePost');
+
+
+//metodos Ingrediente
+//create
+Route::get('/createIngrediente','IngredienteController@createGet');
+Route::post('/createIngrediente','IngredienteController@createPost');
+
+//update
+Route::get('/updateIngrediente','IngredienteController@updateGet');
+Route::post('/updateIngrediente','IngredienteController@updatePost');
+
+//delete
+Route::get('/deleteIngrediente','IngredienteController@deleteGet');
+Route::post('/deleteIngrediente','IngredienteController@deletePost');

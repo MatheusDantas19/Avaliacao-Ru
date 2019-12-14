@@ -29,18 +29,18 @@
         <li><a href="/deleteRU">Excluir RU</a></li>
     </ul>
     <ul id="dropPrato" class="dropdown-content">
-        <li><a href="/cadastroAdmin">Cadastrar novo Prato</a></li>
+        <li><a href="#!">Cadastrar novo Prato</a></li>
         <li class="divider"></li>
         <li><a href="#!">Alterar informações de Prato</a></li>
         <li class="divider"></li>
         <li><a href="#!">Excluir Prato</a></li>
     </ul>
     <ul id="dropIngrediente" class="dropdown-content">
-        <li><a href="/cadastroAdmin">Cadastrar novo Ingrediente</a></li>
+        <li><a href="/createIngrediente">Cadastrar novo Ingrediente</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Alterar informações de Ingrediente</a></li>
+        <li><a href="/updateIngrediente">Alterar informações de Ingrediente</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Excluir Ingrediente</a></li>
+        <li><a href="/deleteIngrediente">Excluir Ingrediente</a></li>
     </ul>
     <ul id="dropReclamacao" class="dropdown-content">
             <li><a href="/cadastroAdmin">Responder</a></li>

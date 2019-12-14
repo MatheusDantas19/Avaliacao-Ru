@@ -30,7 +30,7 @@
         </div>
 
 
-            <button class="btn waves-effect waves-light" type="submit">Cadastrar
+            <button class="btn waves-effect waves-light" type="submit">Cadastrar Restaurante
                 <i class="material-icons right">send</i>
             </button>
         </div>
