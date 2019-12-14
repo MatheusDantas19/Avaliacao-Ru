@@ -9,7 +9,8 @@ class MainController extends Controller
 {
     public function index(Request $request)
     { //rota '/'
-        return view('main.index');
+        // $mensagem = $request->session()->get("mensagem");
+        return view('main.index',compact("mensagem"));
     }
 
 }

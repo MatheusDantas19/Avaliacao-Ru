@@ -23,7 +23,7 @@ class AlunoController extends Controller
             ->where('senha', $request->senha)->first();
 
         if ($aluno) {
-            $request->session()->put('login', '$request->matricula');
+            $request->session()->put('login', $request->matricula);
             return redirect('/dashboard');
         } else {
             $mensagem = $request->session()->flash('mensagem', 'Dados de login incorretos!');
@@ -79,6 +79,59 @@ class AlunoController extends Controller
             return redirect('/');
         }
         return redirect('/');
+    }
+
+    public function alterarGet(Request $request){ // /alterar metodo get
+        if($request->session()->exists('login')){
+            $matricula = $request->session()->get("login");
+            $aluno = Aluno::where('matricula', $matricula)->first();
+
+            $mensagem = $request->session()->get("mensagem");
+            return view ("aluno.alterar",compact("aluno","mensagem"));
+        }else{
+            return redirect("/");
+        }
+    }
+
+    public function alterarPost(Request $request){ // /alterar metodo post
+        if($request->session()->exists('login')){
+            $matricula = $request->session()->get("login");
+            $aluno = Aluno::where('matricula', $matricula)->update(
+                ['matricula' => $request->matricula],
+                ['nome' => $request->nome],
+                ['curso' => $request->curso],
+                ['senha' => $request->senha]
+            );
+            $request->session()->put('login', $request->matricula);
+            $mensagem = $request->session()->flash('mensagem', 'Dados atualizado com sucesso');
+            return redirect("/alterar");
+        }else{
+            return redirect("/");
+        }
+    }
+
+    public function deletar(Request $request){
+        if ($request->session()->exists('login')) {
+
+            $matricula = $request->session()->get("login");
+            $senha = $request->senha;
+
+            $aluno = Aluno::where('matricula',$matricula)
+            ->where('senha', $senha)->first();
+
+            if($aluno){
+                Aluno::where('matricula',$matricula)->where('senha', $senha)->delete();
+                $request->session()->forget('login');
+
+                $request->session()->flash('mensagem', 'Usuário excluido com sucesso');
+                
+                return redirect("/");
+            }else{
+                $request->session()->flash('mensagem', 'Senha informada está incorreta');
+                return redirect ("/alterar");
+            }
+        }
+        return redirect("/");
     }
 
 }
