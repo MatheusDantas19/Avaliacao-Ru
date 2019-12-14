@@ -154,6 +154,7 @@ class AlunoController extends Controller
 
             $opcao = $request->session()->get("prato");
             $restaurante = DB::table("restaurante")->get();
+            
             $mensagem = $request->session()->get("mensagem");
 
             return view('aluno.reclamacao', ['restaurante' => $restaurante,
@@ -187,9 +188,11 @@ class AlunoController extends Controller
                             'id_prato' => $request->prato
                         ]
                     ]);
+
+                    $request->session()->flash('mensagem','Reclamação enviada com sucesso' );
+
                 } else { 
                     $request->session()->flash('prato', $request->input('restaurante'));
-                    $request->session()->flash('mensagem',"Reclamação enviada com sucesso" );
                     return redirect('/reclamacao');
                 }
                 return redirect('/reclamacao');
