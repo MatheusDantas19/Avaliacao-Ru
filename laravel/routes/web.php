@@ -49,3 +49,10 @@ Route::post('/updateAdmin', 'AdminController@updatePost');
 //metodos updateAdmin
 Route::get('/deleteAdmin', 'AdminController@deleteGet');
 Route::post('/deleteAdmin', 'AdminController@deletePost');
+
+//metodos prato
+Route::get('/pratos', 'AlunoController@pratos');
+
+//metodo criarprato
+Route::get('/criarprato', 'AdminController@criarpratoGet');
+Route::post('/criarprato', 'AdminController@criarpratoPost');

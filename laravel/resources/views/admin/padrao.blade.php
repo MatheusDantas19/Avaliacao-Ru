@@ -25,7 +25,7 @@
         <li><a href="#!">Excluir RU</a></li>
     </ul>
     <ul id="dropPrato" class="dropdown-content">
-        <li><a href="/cadastroAdmin">Cadastrar novo Prato</a></li>
+        <li><a href="/criarprato">Cadastrar novo Prato</a></li>
         <li class="divider"></li>
         <li><a href="#!">Alterar informações de Prato</a></li>
         <li class="divider"></li>

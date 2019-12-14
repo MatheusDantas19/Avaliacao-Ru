@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use App\Prato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -147,6 +148,13 @@ class AdminController extends Controller
             return redirect('/loginAdmin');
             }
 
+    }
+    public function criarpratoGet(Request $request){
+        return view('admin.criarprato');
+    }
+    public function criarpratoPost(Request $request){
+        var_dump($request->all());
+        $prato = Prato::create($request->all());
     }
 
 }
