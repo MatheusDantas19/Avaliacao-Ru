@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\Reclamacao;
+use App\Reclamacao_Denuncia_Res;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AlunoController extends Controller
 {
@@ -38,7 +41,7 @@ class AlunoController extends Controller
             return redirect('/dashboard');
         } else {
             $mensagem = $request->session()->get("mensagem");
-            return view('aluno.signup',compact("mensagem"));
+            return view('aluno.signup', compact("mensagem"));
         }
     }
 
@@ -55,11 +58,10 @@ class AlunoController extends Controller
                 $aluno = Aluno::create($request->all());
                 $request->session()->flash('mensagem', 'Aluno cadastrado com sucesso');
                 return redirect('/');
-            }else{
+            } else {
                 $request->session()->flash('mensagem', 'Os dados não podem está em branco!');
                 return redirect('/signup');
             }
-
         }
     }
 
@@ -75,62 +77,70 @@ class AlunoController extends Controller
     public function logout(Request $request)
     {
         if ($request->session()->exists('login')) {
-            $request->session()->forget('login');
+            $request->session()->flush('login');
             return redirect('/');
         }
         return redirect('/');
     }
 
-    public function alterarGet(Request $request){ // /alterar metodo get
-        if($request->session()->exists('login')){
+    public function alterarGet(Request $request)
+    { // /alterar metodo get
+        if ($request->session()->exists('login')) {
             $matricula = $request->session()->get("login");
             $aluno = Aluno::where('matricula', $matricula)->first();
 
             $mensagem = $request->session()->get("mensagem");
-            return view ("aluno.alterar",compact("aluno","mensagem"));
-        }else{
+            return view("aluno.alterar", compact("aluno", "mensagem"));
+        } else {
             return redirect("/");
         }
     }
 
-    public function alterarPost(Request $request){ // /alterar metodo post
-        if($request->session()->exists('login')){
+    public function alterarPost(Request $request)
+    { // /alterar metodo post
+        if ($request->session()->exists('login')) {
             $matricula = $request->session()->get("login");
+
             $aluno = Aluno::where('matricula', $matricula)->update(
-                ['matricula' => $request->matricula],
-                ['nome' => $request->nome],
-                ['curso' => $request->curso],
-                ['senha' => $request->senha]
+                [
+                    'nome' => $request->nome,
+                    'matricula' => $request->matricula,
+                    'curso' => $request->curso,
+                    'senha' => $request->senha
+                ]
             );
+
             $request->session()->put('login', $request->matricula);
             $mensagem = $request->session()->flash('mensagem', 'Dados atualizado com sucesso');
             return redirect("/alterar");
-        }else{
+        } else {
             return redirect("/");
         }
     }
 
-    public function deletar(Request $request){
+    public function deletar(Request $request)
+    {
         if ($request->session()->exists('login')) {
 
             $matricula = $request->session()->get("login");
             $senha = $request->senha;
 
-            $aluno = Aluno::where('matricula',$matricula)
-            ->where('senha', $senha)->first();
+            $aluno = Aluno::where('matricula', $matricula)
+                ->where('senha', $senha)->first();
 
-            if($aluno){
-                Aluno::where('matricula',$matricula)->where('senha', $senha)->delete();
+            if ($aluno) {
+                Aluno::where('matricula', $matricula)->where('senha', $senha)->delete();
                 $request->session()->forget('login');
 
                 $request->session()->flash('mensagem', 'Usuário excluido com sucesso');
-                
+
                 return redirect("/");
-            }else{
+            } else {
                 $request->session()->flash('mensagem', 'Senha informada está incorreta');
-                return redirect ("/alterar");
+                return redirect("/alterar");
             }
         }
         return redirect("/");
     }
+
 }
