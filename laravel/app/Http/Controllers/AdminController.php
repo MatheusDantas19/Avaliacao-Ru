@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use App\Prato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

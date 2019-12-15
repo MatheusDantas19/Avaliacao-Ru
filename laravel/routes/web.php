@@ -51,6 +51,18 @@ Route::post('/updateAdmin', 'AdminController@updatePost');
 Route::get('/deleteAdmin', 'AdminController@deleteGet');
 Route::post('/deleteAdmin', 'AdminController@deletePost');
 
+//metodos prato
+Route::get('/pratos', 'PratoController@pratos');
+
+//metodo criarprato
+//create
+Route::get('/criarprato', 'PratoController@criarpratoGet');
+Route::post('/criarprato', 'PratoController@criarpratoPost');
+
+
+//delete
+Route::get('/deleteprato','PratoController@deleteGet');
+Route::post('/deleteprato','PratoController@deletePost');
 
 //metodos Restaurante
 //create

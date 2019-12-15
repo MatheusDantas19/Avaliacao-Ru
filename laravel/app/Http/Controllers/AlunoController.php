@@ -142,5 +142,4 @@ class AlunoController extends Controller
         }
         return redirect("/");
     }
-
 }
