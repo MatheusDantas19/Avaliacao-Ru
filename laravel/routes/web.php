@@ -28,8 +28,6 @@ Route::get('/deletar','AlunoController@deletar');
 
 Route::get('/logout','AlunoController@logout');
 
-Route::get('/reclamacao','AlunoController@reclamacaoGet');
-Route::post('/reclamacao','AlunoController@reclamacaoPost');
 
 //metodos mainAdmin
 Route::get('/mainAdmin', 'AdminController@main');
@@ -88,3 +86,7 @@ Route::post('/updateIngrediente','IngredienteController@updatePost');
 //delete
 Route::get('/deleteIngrediente','IngredienteController@deleteGet');
 Route::post('/deleteIngrediente','IngredienteController@deletePost');
+
+//metodos Reclamação
+Route::get('/reclamacao','ReclamacaoController@reclamacaoGet');
+Route::post('/reclamacao','ReclamacaoController@reclamacaoPost');

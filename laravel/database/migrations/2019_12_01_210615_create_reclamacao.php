@@ -15,7 +15,7 @@ class CreateReclamacao extends Migration
     {
         Schema::create('reclamacao', function (Blueprint $table) {
             $table->increments('id_reclamacao');
-            $table->dateTime('data_ocorrencia');
+            $table->date('data_ocorrencia');
             $table->string('categoria',50)->nullable();
             $table->text('descricao');
         });

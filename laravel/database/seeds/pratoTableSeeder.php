@@ -15,52 +15,52 @@ class pratoTableSeeder extends Seeder
             [
 
                 [
-                    'nome' => 'escondinho de frango',
+                    'nome' => 'Escondinho de frango',
                     //'descricao' => '',
-                    'classificacao' => 'normal'
+                    'classificacao' => 'Normal'
                 ],
                 [
-                    'nome' => 'bife a cavalo',
+                    'nome' => 'Bife a cavalo',
                     //'descricao' => 'sul',
-                    'classificacao' => 'normal'
+                    'classificacao' => 'Normal'
                 ],
                 [
-                    'nome' => 'escondinho de frango',
+                    'nome' => 'Escondinho de carne',
                     //'descricao' => 'norte',
-                    'classificacao' => 'normal'
+                    'classificacao' => 'Normal'
                 ],
                 [
-                    'nome' => 'cafe com leite integral',
+                    'nome' => 'Cafe com leite integral',
                     //'descricao' => 'norte',
-                    'classificacao' => 'normal'
+                    'classificacao' => 'Normal'
                 ],
                 [
-                    'nome' => 'cafe com leite integral achocolatado',
+                    'nome' => 'Cafe com leite integral achocolatado',
                     //'descricao' => 'norte',
-                    'classificacao' => 'normal'
+                    'classificacao' => 'Normal'
                 ],
                 [
-                    'nome' => 'escondidinho de lentinha',
+                    'nome' => 'Escondidinho de lentinha',
                     //'descricao' => 'norte',
-                    'classificacao' => 'vegetariano'
+                    'classificacao' => 'Vegetariano'
                 ],
                 [
-                    'nome' => 'steak de frango assado no forno',
+                    'nome' => 'Steak de frango assado no forno',
                     //'descricao' => 'norte',
-                    'classificacao' => 'normal'
+                    'classificacao' => 'Normal'
                 ],
                 [
                     'nome' => 'soja reforgada',
                     //'descricao' => 'norte',
-                    'classificacao' => 'vegetariano'
+                    'classificacao' => 'Vegetariano'
                 ],
                 [
-                    'nome' => 'feijoada completa',
+                    'nome' => 'Feijoada completa',
                     //'descricao' => 'norte',
-                    'classificacao' => 'normal'
+                    'classificacao' => 'Normal'
                 ],
                 [
-                    'nome' => 'peixe',
+                    'nome' => 'Peixe',
                     //'descricao' => 'norte',
                     'classificacao' => 'normal'
                 ]
