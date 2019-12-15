@@ -147,21 +147,4 @@ class AdminController extends Controller
             return redirect('/loginAdmin');
         }
     }
-
-
-    public function criarpratoGet(Request $request)
-    {
-        $restaurante = DB::table('admin_gerencia_restaurante')
-            ->join('restaurante', 'admin_gerencia_restaurante.id_restaurante', '=', 'restaurante.id_restaurante')
-            ->join('admin', 'admin_gerencia_restaurante.id_admin', '=', 'admin.id_admin')
-            ->select('restaurante.id_restaurante','restaurante.campus', 'restaurante.setor', 'restaurante.local')
-            ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
-            ->get();
-        return view('admin.criarprato',['restaurante' => $restaurante]);
-    }
-    public function criarpratoPost(Request $request)
-    {
-        var_dump($request->all());
-        $prato = Prato::create($request->all());
-    }
 }

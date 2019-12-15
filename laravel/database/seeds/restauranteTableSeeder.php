@@ -15,54 +15,54 @@ class restauranteTableSeeder extends Seeder
         DB::table('restaurante')->insert(
             [
                 [
-                    'campus' => 'manaus',
-                    'setor' => 'norte',
-                    'local' => 'coroado'
+                    'campus' => 'Manaus',
+                    'setor' => 'Norte',
+                    'local' => 'Coroado'
                 ],
                 [
-                    'campus' => 'manaus',
-                    'setor' => 'sul',
-                    'local' => 'coroado'
+                    'campus' => 'Manaus',
+                    'setor' => 'Sul',
+                    'local' => 'Coroado'
                 ],
                 [
-                    'campus' => 'manaus',
-                    'setor' => 'externo med',
-                    'local' => 'centro'
+                    'campus' => 'Manaus',
+                    'setor' => 'Externo medicina',
+                    'local' => 'Centro'
                 ],
                 [
-                    'campus' => 'humaita',
-                    'setor' => 'polo do vale',
-                    'local' => 'coroado'
+                    'campus' => 'Humaita',
+                    'setor' => 'Polo do vale',
+                    'local' => 'Coroado'
                 ],
                 [
-                    'campus' => 'itacotiara',
-                    'setor' => 'campus1',
-                    'local' => 'am-010'
+                    'campus' => 'Itacotiara',
+                    'setor' => 'Campus1',
+                    'local' => 'Am-010'
                 ],
                 [
-                    'campus' => 'itacotiara',
-                    'setor' => 'campus2',
-                    'local' => 'tiradentes'
+                    'campus' => 'Itacotiara',
+                    'setor' => 'Campus2',
+                    'local' => 'Tiradentes'
                 ],
                 [
-                    'campus' => 'parintins',
-                    'setor' => 'dorval',
-                    'local' => 'jacareacanga'
+                    'campus' => 'Parintins',
+                    'setor' => 'Dorval',
+                    'local' => 'Jacareacanga'
                 ],
                 [
-                    'campus' => 'coari',
-                    'setor' => 'multicampus',
-                    'local' => 'urucu'
+                    'campus' => 'Coari',
+                    'setor' => 'Multicampus',
+                    'local' => 'Urucu'
                 ],
                 [
-                    'campus' => 'tabatinga',
-                    'setor' => 'norte',
-                    'local' => 'sede'
+                    'campus' => 'Tabatinga',
+                    'setor' => 'Norte',
+                    'local' => 'Sede'
                 ],
                 [
-                    'campus' => 'tabatinga',
-                    'setor' => 'sul',
-                    'local' => 'centro'
+                    'campus' => 'Tabatinga',
+                    'setor' => 'Sul',
+                    'local' => 'Centro'
                 ]
             ]
 
