@@ -3,6 +3,8 @@
     Apagar Ingrediente
 @endsection
 @section('conteudo')
+
+
 <table>
     <thead>
         <caption>Lista de Ingredientes:</caption>

@@ -133,9 +133,4 @@ class AlunoController extends Controller
         }
         return redirect("/");
     }
-    public function pratos(Request $request){
-        return view ("aluno.pratos");
-        
-    }
-
 }

@@ -1,11 +1,14 @@
 @extends ("on")
+@section('cabecalho')
+    Visualizar Pratos
+@endsection
 @section ("conteudo")
 <form method="POST">
   <div class="row">
     <div class="col 6">
-      <label>Campus</label>
+      <label>Restaurante</label>
       <select class="browser-default">
-        <option value="" disabled selected>Escolha Campus</option>
+        <option value="" disabled selected>Escolha </option>
         <option value="1">Coroado - Setor Sul </option>
         <option value="2">Coroado - Setor Norte</option>
         <option value="3">Centro - Medicina</option>
@@ -37,8 +40,6 @@
     </button>
   </div>
 </form>
-
-<h4>Pratos</h4>
 
 <table class="centered">
   <thead>

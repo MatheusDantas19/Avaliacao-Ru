@@ -51,14 +51,18 @@ Route::post('/updateAdmin', 'AdminController@updatePost');
 Route::get('/deleteAdmin', 'AdminController@deleteGet');
 Route::post('/deleteAdmin', 'AdminController@deletePost');
 
-<<<<<<< HEAD
 //metodos prato
-Route::get('/pratos', 'AlunoController@pratos');
+Route::get('/pratos', 'PratoController@pratos');
 
 //metodo criarprato
-Route::get('/criarprato', 'AdminController@criarpratoGet');
-Route::post('/criarprato', 'AdminController@criarpratoPost');
-=======
+//create
+Route::get('/criarprato', 'PratoController@criarpratoGet');
+Route::post('/criarprato', 'PratoController@criarpratoPost');
+
+
+//delete
+Route::get('/deleteprato','PratoController@deleteGet');
+Route::post('/deleteprato','PratoController@deletePost');
 
 //metodos Restaurante
 //create
@@ -94,4 +98,3 @@ Route::post('/updateIngrediente','IngredienteController@updatePost');
 //delete
 Route::get('/deleteIngrediente','IngredienteController@deleteGet');
 Route::post('/deleteIngrediente','IngredienteController@deletePost');
->>>>>>> a4132ff266236f24fd26c6d220691a0b85f3c6da
