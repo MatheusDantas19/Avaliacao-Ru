@@ -28,10 +28,6 @@
     </ul> -->
     <ul id="dropPrato" class="dropdown-content">
         <li><a href="/pratos">Buscar prato</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">Alterar informações de Prato</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">Excluir Prato</a></li>
     </ul>
     <!-- <ul id="dropIngrediente" class="dropdown-content">
         <li><a href="/createIngrediente">Cadastrar novo Ingrediente</a></li>
@@ -44,8 +40,8 @@
         <li><a href="/criaReclamacao">Enviar uma reclamação</a></li>
         <li class="divider"></li>
         <li><a href="/verReclamacao">Ver reclamação</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">Excluir Resposta</a></li>
+        <!-- <li class="divider"></li>
+        <li><a href="#!">Excluir Resposta</a></li> -->
     </ul>
     <nav class="nav-extended">
         <div class="nav-wrapper">

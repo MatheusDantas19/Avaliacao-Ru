@@ -37,8 +37,8 @@ Cadastrar Prato
                 <label style="font-size: 15px;">classificação</label>
                 <select name="classificacao" class="browser-default">
                     <option value="" disabled selected>Escolha Classificação</option>
-                    <option value="Vegetariano">Vegetariano</option>
                     <option value="Normal">Normal</option>
+                    <option value="Vegetariano">Vegetariano</option>
                 </select>
             </div>
         </div>
@@ -57,9 +57,9 @@ Cadastrar Prato
             <div class="input-field col s6">
                 <select name='turno'>
                     <option value="" disabled selected>Turno</option>
-                    <option value="Mat">Matutino</option>
-                    <option value="Ves">Vespertino</option>
-                    <option value="Not">Noturno</option>
+                    <option value="1">Matutino</option>
+                    <option value="2">Vespertino</option>
+                    <option value="3">Noturno</option>
                 </select>
                 <label>Escolha Turno</label>
             </div>
@@ -69,12 +69,12 @@ Cadastrar Prato
                 <label>Dia Da Semana</label>
                 <select name='dia_semana'>
                     <option value="" disabled selected>Escolha Dia</option>
-                    <option value="seg">Segunda-Feira</option>
-                    <option value="ter">Terça-Feira</option>
-                    <option value="qua">Quarta-Feira</option>
-                    <option value="qui">Quinta-Feira</option>
-                    <option value="sex">Sexta-Feira</option>
-                    <option value="sab">Sabado</option>
+                    <option value="1">Segunda-Feira</option>
+                    <option value="2">Terça-Feira</option>
+                    <option value="3">Quarta-Feira</option>
+                    <option value="4">Quinta-Feira</option>
+                    <option value="5">Sexta-Feira</option>
+                    <option value="6">Sabado</option>
                 </select>
             </div>
         </div>

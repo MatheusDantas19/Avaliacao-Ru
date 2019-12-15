@@ -105,3 +105,6 @@ Route::post('/criaReclamacao','ReclamacaoController@criaReclamacaoPost');
 
 Route::get('/verReclamacao','ReclamacaoController@verReclamacaoGet');
 Route::post('/verReclamacao','ReclamacaoController@verReclamacaoPost');
+
+Route::get('/pratos','PratoController@pratosGet');
+Route::post('/pratos','PratoController@pratosPost');
