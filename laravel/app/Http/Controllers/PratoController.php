@@ -22,8 +22,8 @@ class PratoController extends Controller
 
             $ingrediente = DB::table('ingrediente')->get();
             $mensagem = $request->session()->get("mensagem");
-            return view('prato.criarprato', ['restaurante' => $restaurante, 'ingrediente' => $ingrediente],compact("mensagem"));
-        }else{
+            return view('prato.criarprato', ['restaurante' => $restaurante, 'ingrediente' => $ingrediente], compact("mensagem"));
+        } else {
             return redirect("/");
         }
     }
@@ -46,9 +46,9 @@ class PratoController extends Controller
                     "turno" => $turno, "dia_semana" => $dia_semana, "id_restaurante" => $request->restaurante,
                     "id_prato" => $prato->id
                 ]);
-                $mensagem = $request->session()->flash('mensagem', 'Prato cadastrado com sucesso');
-                return redirect('/criarprato');
-        }else{
+            $mensagem = $request->session()->flash('mensagem', 'Prato cadastrado com sucesso');
+            return redirect('/criarprato');
+        } else {
             return redirect('/');
         }
     }
@@ -71,7 +71,14 @@ class PratoController extends Controller
                 ->select('restaurante.id_restaurante', 'restaurante.campus', 'restaurante.setor', 'restaurante.local')
                 ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
                 ->get();
-            return view("prato.deleteprato", compact(["mensagem", "restaurante", 'ings']));
+            $prato = DB::table('admin_gerencia_restaurante')
+                ->join('restaurante', 'admin_gerencia_restaurante.id_restaurante', '=', 'restaurante.id_restaurante')
+                ->join('admin', 'admin_gerencia_restaurante.id_admin', '=', 'admin.id_admin')
+                ->join('restaurante_serve_prato', 'restaurante_serve_prato.id_restaurante', '=', 'admin_gerencia_restaurante.id_admin')
+                ->join('prato', 'restaurante_serve_prato.id_prato', '=', 'prato.id_prato')
+                ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
+                ->get();
+            return view("prato.deleteprato", compact(["mensagem", "restaurante", "prato",'ings']));
         } else {
             return redirect('/loginAdmin');
         }

@@ -27,16 +27,12 @@ Apagar Prato
                 </tr>
             </thead>
             <tbody>
-                @php
-                foreach ($ings as $i => $value) {
-                echo '<tr>';
-                    echo'<td>'.$value->id_prato.'</td>';
-                    echo'<td>'.$value->nome.'</td>';
-                    echo'<td>'.$value->descricao.'</td>';
-                    echo'<td>'.$value->classificacao.'</td>';
-                    echo'</tr>';
-                }
-                @endphp
+                @foreach($prato as $prat)
+                <th>{{$prat->id_prato}}</th>
+                <th>{{$prat->nome}}</th>
+                <th>{{$prat->descricao}}</th>
+                <th>{{$prat->classificacao}}</th>
+                @endforeach
             </tbody>
         </table>
         <br>Insira no campo abaixo o ID_Prato que você Deseja apagar:
