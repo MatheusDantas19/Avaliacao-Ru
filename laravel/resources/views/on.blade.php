@@ -15,7 +15,7 @@
         <li><a href="/alterar">Alterar seus dados</a></li>
         <li class="divider"></li>
     </ul>
-    <ul id="dropRU" class="dropdown-content">
+    <!-- <ul id="dropRU" class="dropdown-content">
         <li><a href="/createRU">Cadastrar novo RU</a></li>
         <li class="divider"></li>
         <li><a href="/updateAdminRU">Administrar novo RU</a></li>
@@ -25,9 +25,9 @@
         <li><a href="/deleteAdminRU">Deixar de Administrar um RU</a></li>
         <li class="divider"></li>
         <li><a href="/deleteRU">Excluir RU</a></li>
-    </ul>
+    </ul> -->
     <ul id="dropPrato" class="dropdown-content">
-        <li><a href="#!">Buscar prato</a></li>
+        <li><a href="/pratos">Buscar prato</a></li>
         <li class="divider"></li>
         <li><a href="#!">Alterar informações de Prato</a></li>
         <li class="divider"></li>
@@ -41,9 +41,9 @@
         <li><a href="/deleteIngrediente">Excluir Ingrediente</a></li>
     </ul> -->
     <ul id="dropReclamacao" class="dropdown-content">
-        <li><a href="/reclamacao">Enviar uma reclamação</a></li>
+        <li><a href="/criaReclamacao">Enviar uma reclamação</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Ver reclamação</a></li>
+        <li><a href="/verReclamacao">Ver reclamação</a></li>
         <li class="divider"></li>
         <li><a href="#!">Excluir Resposta</a></li>
     </ul>
@@ -62,7 +62,7 @@
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a class="dropdown-trigger" href="#!" data-target="dropReclamacao">Reclamação<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropConta">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropRU">Gerir RU<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropRU">Gerir RU<i class="material-icons right">arrow_drop_down</i></a></li> -->
                     <li><a class="dropdown-trigger" href="#!" data-target="dropPrato">Pratos<i class="material-icons right">arrow_drop_down</i></a></li>
                     <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropIngrediente">Gerir Ingredientes<i class="material-icons right">arrow_drop_down</i></a></li> -->
                 </ul>

@@ -12,37 +12,49 @@ class PratoController extends Controller
 
     public function criarpratoGet(Request $request)
     {
-        $restaurante = DB::table('admin_gerencia_restaurante')
-            ->join('restaurante', 'admin_gerencia_restaurante.id_restaurante', '=', 'restaurante.id_restaurante')
-            ->join('admin', 'admin_gerencia_restaurante.id_admin', '=', 'admin.id_admin')
-            ->select('restaurante.id_restaurante', 'restaurante.campus', 'restaurante.setor', 'restaurante.local')
-            ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
-            ->get();
-        $ingrediente = DB::table('ingrediente')
-            ->get();
-        return view('prato.criarprato', ['restaurante' => $restaurante, 'ingrediente' => $ingrediente]);
+        if ($request->session()->exists('loginAdmin')) {
+            $restaurante = DB::table('admin_gerencia_restaurante')
+                ->join('restaurante', 'admin_gerencia_restaurante.id_restaurante', '=', 'restaurante.id_restaurante')
+                ->join('admin', 'admin_gerencia_restaurante.id_admin', '=', 'admin.id_admin')
+                ->select('restaurante.id_restaurante', 'restaurante.campus', 'restaurante.setor', 'restaurante.local')
+                ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
+                ->get();
+
+            $ingrediente = DB::table('ingrediente')->get();
+            $mensagem = $request->session()->get("mensagem");
+            return view('prato.criarprato', ['restaurante' => $restaurante, 'ingrediente' => $ingrediente],compact("mensagem"));
+        }else{
+            return redirect("/");
+        }
     }
     public function criarpratoPost(Request $request)
     {
-        $ingredientes = $request->ingrediente;
-        var_dump($ingredientes);
-        $prato = Prato::create($request->all());
-        foreach ($ingredientes as $ingred) {
-            DB::table('prato_contem_ingrediente')
+        if ($request->session()->exists('loginAdmin')) {
+            $ingredientes = $request->ingrediente;
+            var_dump($ingredientes);
+            $prato = Prato::create($request->all());
+            foreach ($ingredientes as $ingred) {
+                DB::table('prato_contem_ingrediente')
+                    ->insert([
+                        "id_prato" => $prato->id, "id_ingrediente" => $ingred
+                    ]);
+            }
+            $turno = $request->turno;
+            $dia_semana = $request->dia_semana;
+            DB::table('restaurante_serve_prato')
                 ->insert([
-                    "id_prato" => $prato->id, "id_ingrediente" => $ingred
+                    "turno" => $turno, "dia_semana" => $dia_semana, "id_restaurante" => $request->restaurante,
+                    "id_prato" => $prato->id
                 ]);
+                $mensagem = $request->session()->flash('mensagem', 'Prato cadastrado com sucesso');
+                return redirect('/criarprato');
+        }else{
+            return redirect('/');
         }
-        $turno = $request->turno;
-        $dia_semana = $request->dia_semana;
-        DB::table('restaurante_serve_prato')
-            ->insert([
-                "turno" => $turno, "dia_semana" => $dia_semana, "id_restaurante"=>$request->restaurante,
-                "id_prato"=>$prato->id
-            ]);
     }
     public function pratos(Request $request)
     {
+
         return view("prato.pratos");
     }
 

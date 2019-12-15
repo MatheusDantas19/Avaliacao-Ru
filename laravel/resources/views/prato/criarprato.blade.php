@@ -4,6 +4,7 @@ Cadastrar Prato
 @endsection
 @section ("conteudo")
 <div class="row">
+    {{$mensagem}}
     <form method="POST">
         @csrf
         <div class="row">

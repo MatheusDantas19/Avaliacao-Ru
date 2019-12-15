@@ -100,5 +100,8 @@ Route::get('/deleteIngrediente','IngredienteController@deleteGet');
 Route::post('/deleteIngrediente','IngredienteController@deletePost');
 
 //metodos Reclamação
-Route::get('/reclamacao','ReclamacaoController@reclamacaoGet');
-Route::post('/reclamacao','ReclamacaoController@reclamacaoPost');
+Route::get('/criaReclamacao','ReclamacaoController@criaReclamacaoGet');
+Route::post('/criaReclamacao','ReclamacaoController@criaReclamacaoPost');
+
+Route::get('/verReclamacao','ReclamacaoController@verReclamacaoGet');
+Route::post('/verReclamacao','ReclamacaoController@verReclamacaoPost');
