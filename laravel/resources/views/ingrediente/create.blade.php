@@ -21,7 +21,6 @@
                 <label for="descricao">Descrição:</label>
             </div>
         </div>
-
             <button class="btn waves-effect waves-light" type="submit">Cadastrar Ingrediente
                 <i class="material-icons right">send</i>
             </button>

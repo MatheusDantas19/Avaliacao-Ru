@@ -22,7 +22,7 @@ class CreateRestauranteServePrato extends Migration
 
             $table->string('dia_semana',3)->nullable()->unique();
 
-            $table->primary(array('id_restaurante', 'id_prato'));
+            $table->primary(array('id_restaurante', 'id_prato', 'turno', 'dia_semana'),'rest_serve_prato_pk');
 
             $table->foreign('id_restaurante')
                 ->references('id_restaurante')
