@@ -13,57 +13,57 @@ class pratoTableSeeder extends Seeder
     {
         DB::table('prato')->insert(
             [
+                [
+                    'nome' => 'Cafe com leite',
+                    'descricao' => 'Café preto com leite integral',
+                    'classificacao' => 'Normal'
+                ],
+                [
+                    'nome' => 'Achocolatado',
+                    'descricao' => 'Leite Integral com Achocolatado',
+                    'classificacao' => 'Normal'
+                ],
+                [
+                    'nome' => 'Pão com Manteiga',
+                    'descricao' => 'Pão com manteiga chapeado',
+                    'classificacao' => 'Normal'
+                ],
+                [
+                    'nome' => 'Arroz',
+                    'descricao' => 'Arroz Comum cozido com refogado de alho e cebola',
+                    'classificacao' => 'Vegetariano'
+                ],
+                [
+                    'nome' => 'Feijão',
+                    'descricao' => 'Feijão cozido com legumes',
+                    'classificacao' => 'Vegetariano'
+                ],
+                [
+                    'nome' => 'Macarrão',
+                    'descricao' => 'Macarrão cozido com cebola e pimentão refogados',
+                    'classificacao' => 'Vegetariano'
+                ],
+                [
+                    'nome' => 'Proteina vegetal',
+                    'descricao' => 'Iscas de carne de soja no refogado de tomate',
+                    'classificacao' => 'Vegetariano'
+                ],
+                [
+                    'nome' => 'Bife',
+                    'descricao' => 'Carne de vaca corta em bifes chapeada com cebola',
+                    'classificacao' => 'Normal'
+                ],
+                [
+                    'nome' => 'Sopa de legumes',
+                    'descricao' => 'Macarrão cozido no caldo de legumes',
+                    'classificacao' => 'Vegetariano'
+                ],
+                [
+                    'nome' => 'Sopa de Carne',
+                    'descricao' => 'Macarrão cozido no caldo de legumes com carne',
+                    'classificacao' => 'Normal'
+                ],
 
-                [
-                    'nome' => 'Escondinho de frango',
-                    //'descricao' => '',
-                    'classificacao' => 'Normal'
-                ],
-                [
-                    'nome' => 'Bife a cavalo',
-                    //'descricao' => 'sul',
-                    'classificacao' => 'Normal'
-                ],
-                [
-                    'nome' => 'Escondinho de carne',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'Normal'
-                ],
-                [
-                    'nome' => 'Cafe com leite integral',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'Normal'
-                ],
-                [
-                    'nome' => 'Cafe com leite integral achocolatado',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'Normal'
-                ],
-                [
-                    'nome' => 'Escondidinho de lentinha',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'Vegetariano'
-                ],
-                [
-                    'nome' => 'Steak de frango assado no forno',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'Normal'
-                ],
-                [
-                    'nome' => 'soja reforgada',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'Vegetariano'
-                ],
-                [
-                    'nome' => 'Feijoada completa',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'Normal'
-                ],
-                [
-                    'nome' => 'Peixe',
-                    //'descricao' => 'norte',
-                    'classificacao' => 'normal'
-                ]
             ]
         );
     }
