@@ -15,7 +15,7 @@ class adminTableSeeder extends Seeder
             [
                 [
                     'nome' => 'teste',
-                    'senha' => '1234',
+                    'senha' => '1234'
 
                 ],
                 [
