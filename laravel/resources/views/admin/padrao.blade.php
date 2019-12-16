@@ -29,11 +29,9 @@
         <li><a href="/deleteRU">Excluir RU</a></li>
     </ul>
     <ul id="dropPrato" class="dropdown-content">
-        <li><a href="#!">Cadastrar novo Prato</a></li>
+        <li><a href="/criarprato">Cadastrar novo Prato</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Alterar informações de Prato</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">Excluir Prato</a></li>
+        <li><a href="/deleteprato">Excluir Prato</a></li>
     </ul>
     <ul id="dropIngrediente" class="dropdown-content">
         <li><a href="/createIngrediente">Cadastrar novo Ingrediente</a></li>

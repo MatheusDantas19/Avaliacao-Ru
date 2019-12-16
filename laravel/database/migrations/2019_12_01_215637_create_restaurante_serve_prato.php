@@ -18,11 +18,11 @@ class CreateRestauranteServePrato extends Migration
 
             $table->integer('id_prato')->unsigned()->length(10);
 
-            $table->string('turno',3)->nullable()->unique();
+            $table->integer('turno')->unsigned()->length(10);
 
-            $table->string('dia_semana',3)->nullable()->unique();
+            $table->integer('dia_semana')->unsigned()->length(10);
 
-            $table->primary(array('id_restaurante', 'id_prato', 'turno', 'dia_semana'),'rest_serve_prato_pk');
+            $table->primary(array('id_restaurante', 'id_prato','turno','dia_semana'),'rest_serve_prato_pk');
 
             $table->foreign('id_restaurante')
                 ->references('id_restaurante')

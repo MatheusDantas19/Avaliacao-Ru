@@ -5,7 +5,6 @@
 @endsection
 
 @section('conteudo')
-{{$mensagem}}
 <style>
     .deletar {
         color: red;   
@@ -49,6 +48,8 @@
             <button class="btn waves-effect waves-light" type="submit">Salvar Alterações
                 <i class="material-icons right">send</i>
             </button>
+            {{$mensagem}}
+
         </div>
     </form>
     <a class="deletar modal-trigger" href="#modal1">Deseja deletar sua conta?</a>

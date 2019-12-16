@@ -28,8 +28,8 @@ Route::get('/deletar','AlunoController@deletar');
 
 Route::get('/logout','AlunoController@logout');
 
-//metodos admin
-//metodos main
+
+//metodos mainAdmin
 Route::get('/mainAdmin', 'AdminController@main');
 
 //metodos login
@@ -51,6 +51,18 @@ Route::post('/updateAdmin', 'AdminController@updatePost');
 Route::get('/deleteAdmin', 'AdminController@deleteGet');
 Route::post('/deleteAdmin', 'AdminController@deletePost');
 
+//metodos prato
+Route::get('/pratos', 'PratoController@pratos');
+
+//metodo criarprato
+//create
+Route::get('/criarprato', 'PratoController@criarpratoGet');
+Route::post('/criarprato', 'PratoController@criarpratoPost');
+
+
+//delete
+Route::get('/deleteprato','PratoController@deleteGet');
+Route::post('/deleteprato','PratoController@deletePost');
 
 //metodos Restaurante
 //create
@@ -86,3 +98,13 @@ Route::post('/updateIngrediente','IngredienteController@updatePost');
 //delete
 Route::get('/deleteIngrediente','IngredienteController@deleteGet');
 Route::post('/deleteIngrediente','IngredienteController@deletePost');
+
+//metodos Reclamação
+Route::get('/criaReclamacao','ReclamacaoController@criaReclamacaoGet');
+Route::post('/criaReclamacao','ReclamacaoController@criaReclamacaoPost');
+
+Route::get('/verReclamacao','ReclamacaoController@verReclamacaoGet');
+Route::post('/verReclamacao','ReclamacaoController@verReclamacaoPost');
+
+Route::get('/pratos','PratoController@pratosGet');
+Route::post('/pratos','PratoController@pratosPost');
