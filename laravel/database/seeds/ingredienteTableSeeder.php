@@ -53,6 +53,38 @@ class ingredienteTableSeeder extends Seeder
                 [
                     'nome' => 'Feijão Carioca',
                     'descricao' => ''
+                ],
+                [
+                    'nome' => 'leite',
+                    'descricao' => 'leite de vaca integral'
+                ],
+                [
+                    'nome' => 'Chocolate em pó',
+                    'descricao' => ''
+                ],
+                [
+                    'nome' => 'Frango',
+                    'descricao' => 'Carne de Frango'
+                ],
+                [
+                    'nome' => 'Café',
+                    'descricao' => 'Pó de Café'
+                ],
+                [
+                    'nome' => 'Soja',
+                    'descricao' => ''
+                ],
+                [
+                    'nome' => 'Carne de Porco',
+                    'descricao' => 'Carne Suina'
+                ],
+                [
+                    'nome' => 'Peixe',
+                    'descricao' => ''
+                ],
+                [
+                    'nome' => 'Carne',
+                    'descricao' => ''
                 ]
             ]
         );
