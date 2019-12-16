@@ -64,14 +64,22 @@ class PratoController extends Controller
                 ->select('restaurante.id_restaurante', 'restaurante.campus', 'restaurante.setor', 'restaurante.local')
                 ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
                 ->get();
-            $prato = DB::table('admin_gerencia_restaurante')
-                ->join('restaurante', 'admin_gerencia_restaurante.id_restaurante', '=', 'restaurante.id_restaurante')
-                ->join('admin', 'admin_gerencia_restaurante.id_admin', '=', 'admin.id_admin')
-                ->join('restaurante_serve_prato', 'restaurante_serve_prato.id_restaurante', '=', 'admin_gerencia_restaurante.id_admin')
-                ->join('prato', 'restaurante_serve_prato.id_prato', '=', 'prato.id_prato')
-                ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
-                ->get();
-            return view("prato.deleteprato", compact(["mensagem", "restaurante", "prato",'ings']));
+
+            if ($request->session()->exists('restaurante')) {
+                //$restaurante = $request->session()->get('restaurante');
+                $prato = DB::table('admin_gerencia_restaurante')
+                    ->join('restaurante', 'admin_gerencia_restaurante.id_restaurante', '=', 'restaurante.id_restaurante')
+                    ->join('restaurante_serve_prato', 'restaurante_serve_prato.id_restaurante', '=', 'admin_gerencia_restaurante.id_restaurante')
+                    ->join('prato', 'restaurante_serve_prato.id_prato', '=', 'prato.id_prato')
+                    ->where('admin_gerencia_restaurante.id_admin', '=', $request->session()->get('id_admin'))
+                    ->where('admin_gerencia_restaurante.id_restaurante', '=', $request->session()->get('restaurante'))
+                    ->get();
+
+                $op = $request->session()->get('restaurante');
+
+            }
+
+            return view("prato.deleteprato", compact(["mensagem", "restaurante", "prato",'op']));
         } else {
             return redirect('/loginAdmin');
         }
@@ -80,11 +88,18 @@ class PratoController extends Controller
     public function deletePost(Request $request)
     {
         if ($request->session()->exists('loginAdmin')) {
-            $id_prato =  $request->id_prato;
-            DB::table('prato')
-                ->where('id_prato', $id_prato)
-                ->delete();
-            $mensagem = $request->session()->flash('mensagem', 'prato excluido com sucesso');
+            if ($request->has('restaurante')) {
+                if ($request->has('submit')) {
+                    $id_prato =  $request->id_prato;
+                    DB::table('prato')
+                        ->where('id_prato', $id_prato)
+                        ->delete();
+                    $mensagem = $request->session()->flash('mensagem', 'prato excluido com sucesso');
+                    return redirect("/deleteprato");
+                }
+                $request->session()->flash("restaurante", $request->restaurante);
+            }
+            // $mensagem = $request->session()->flash('mensagem', 'prato excluido com sucesso');
             return redirect("/deleteprato");
         } else {
             return redirect('/loginAdmin');
@@ -94,12 +109,13 @@ class PratoController extends Controller
     public function pratosGet(Request $request)
     {
         if ($request->session()->exists('login')) {
-
+            $op = 'oi';
             $pratos = null;
             if ($request->session()->exists('restaurante')) {
                 $restaurante = $request->session()->get('restaurante');
                 $opcao = $restaurante;
                 $turno = $request->session()->get('turno');
+                $op = $request->session()->get('restaurante');
                 $dia = $request->session()->get('dia');
                 $pratos = DB::table('restaurante_serve_prato')
                     ->join('prato', 'restaurante_serve_prato.id_prato', '=', 'prato.id_prato')
@@ -113,13 +129,15 @@ class PratoController extends Controller
                 // echo '<pre>';
                 // print_r($pratos);
                 // echo '</pre>';
+                
             }
-
             $restaurante = DB::table("restaurante")->get();
 
             return view('prato.pratos', [
                 'restaurante' => $restaurante
             ], compact('pratos'));
+
+           
         } else {
             return redirect("/");
         }
