@@ -108,3 +108,8 @@ Route::post('/verReclamacao','ReclamacaoController@verReclamacaoPost');
 
 Route::get('/pratos','PratoController@pratosGet');
 Route::post('/pratos','PratoController@pratosPost');
+
+//metodos resposta
+//create
+Route::get('/createResposta', 'RespostaController@createGet');
+Route::post('/createResposta', 'RespostaController@createPost');
