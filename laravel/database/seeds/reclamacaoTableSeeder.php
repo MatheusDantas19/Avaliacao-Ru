@@ -22,7 +22,7 @@ class reclamacaoTableSeeder extends Seeder
                 [
                     'data_ocorrencia' => '2019-11-12 15:33:22',
                     'categoria' => 'Comida',
-                    'descricao' => 'A comida estava extremamente fria'
+                    'descricao' => 'A soja estava extremamente gelada'
                 ],
                 [
                     'data_ocorrencia' => '2019-12-15 13:52:09',
