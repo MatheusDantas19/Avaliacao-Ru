@@ -52,13 +52,6 @@ class PratoController extends Controller
             return redirect('/');
         }
     }
-    public function pratos(Request $request)
-    {
-
-        return view("prato.pratos");
-    }
-
-
 
     public function deleteGet(Request $request)
     {
@@ -95,6 +88,57 @@ class PratoController extends Controller
             return redirect("/deleteprato");
         } else {
             return redirect('/loginAdmin');
+        }
+    }
+
+    public function pratosGet(Request $request)
+    {
+        if ($request->session()->exists('login')) {
+
+            $pratos = null;
+            if ($request->session()->exists('restaurante')) {
+                $restaurante = $request->session()->get('restaurante');
+                $opcao = $restaurante;
+                $turno = $request->session()->get('turno');
+                $dia = $request->session()->get('dia');
+                $pratos = DB::table('restaurante_serve_prato')
+                    ->join('prato', 'restaurante_serve_prato.id_prato', '=', 'prato.id_prato')
+                    // ->join('prato_contem_ingrediente', 'prato.id_prato', '=', 'prato_contem_ingrediente.id_prato')
+                    //->join('ingrediente', 'prato_contem_ingrediente.id_ingrediente', '=', 'ingrediente.id_ingrediente')
+                    ->where('restaurante_serve_prato.id_restaurante', '=', $restaurante)
+                    ->where('restaurante_serve_prato.turno', '=', $turno)
+                    ->where('restaurante_serve_prato.dia_semana', '=', $dia)
+                    ->get();
+
+                // echo '<pre>';
+                // print_r($pratos);
+                // echo '</pre>';
+            }
+
+            $restaurante = DB::table("restaurante")->get();
+
+            return view('prato.pratos', [
+                'restaurante' => $restaurante
+            ], compact('pratos'));
+        } else {
+            return redirect("/");
+        }
+    }
+
+    public function pratosPost(Request $request)
+    {
+        if ($request->session()->exists('login')) {
+            $restaurante = $request->restaurante;
+            $turno = $request->turno;
+            $dia = $request->dia;
+
+            $request->session()->flash('restaurante', $restaurante);
+            $request->session()->flash('turno', $turno);
+            $request->session()->flash('dia', $dia);
+
+            return redirect('/pratos');
+        } else {
+            return redirect("/");
         }
     }
 }

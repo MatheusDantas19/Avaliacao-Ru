@@ -37,8 +37,8 @@ Cadastrar Prato
                 <label style="font-size: 15px;">classificação</label>
                 <select name="classificacao" class="browser-default">
                     <option value="" disabled selected>Escolha Classificação</option>
-                    <option value="Vegetariano">Vegetariano</option>
                     <option value="Normal">Normal</option>
+                    <option value="Vegetariano">Vegetariano</option>
                 </select>
             </div>
         </div>
