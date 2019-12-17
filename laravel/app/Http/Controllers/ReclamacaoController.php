@@ -16,11 +16,17 @@ class ReclamacaoController extends Controller
         if ($request->session()->exists('login')) {
 
             $pratos = null;
-            if ($request->session()->exists('prato')) {
-                $pratos = DB::table("prato")->get();
+            if ($request->session()->exists('restaurante')) {
+                $pratos = DB::table("restaurante_serve_prato")
+                ->join('prato','restaurante_serve_prato.id_prato','=','prato.id_prato')
+                ->where('restaurante_serve_prato.id_restaurante','=',$request->session()->get('restaurante'))
+                ->where('restaurante_serve_prato.dia_semana','=',$request->session()->get('dia'))
+                ->where('restaurante_serve_prato.turno','=',$request->session()->get('turno'))
+                ->get();
             }
 
-            $opcao = $request->session()->get("prato");
+            $opcao = $request->session()->get("restaurante");
+            
             $restaurante = DB::table("restaurante")->get();
 
             $mensagem = $request->session()->get("mensagem");
@@ -39,6 +45,8 @@ class ReclamacaoController extends Controller
         if ($request->session()->exists('login')) {
             if ($request->has('restaurante')) {
                 if ($request->has('submit')) {
+                    DB::beginTransaction();
+
                     $reclamacao = Reclamacao::create([
                         'data_ocorrencia' => $request->data,
                         'categoria' => $request->categoria,
@@ -59,7 +67,7 @@ class ReclamacaoController extends Controller
                         ]
                     ]);
 
-                    $aluno_abre_reclamcaco = DB::table('aluno_abre_reclamacao')->insert([
+                    $aluno_abre_reclamcao = DB::table('aluno_abre_reclamacao')->insert([
                         [
                             'matricula' => $request->session()->get('login'),
                             'id_reclamacao' => $reclamacao->id,
@@ -68,9 +76,18 @@ class ReclamacaoController extends Controller
     
                     ]);
 
+                    if($reclamacao && $reclamacao_denuncia_res && $reclamacao_cita_pra && $aluno_abre_reclamcao){
+                        DB::commit();
+                    }else{
+                        DB::rollBack();
+                    }
+
                     $request->session()->flash('mensagem', 'Reclamação enviada com sucesso');
                 } else {
-                    $request->session()->flash('prato', $request->input('restaurante'));
+                    $request->session()->flash('restaurante', $request->input('restaurante'));
+                    $request->session()->flash('dia', $request->input('dia'));
+                    $request->session()->flash('turno', $request->input('turno'));
+
                     return redirect('/criaReclamacao');
                 }
                 return redirect('/criaReclamacao');
