@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
          $this->call(reclamacao_cita_pratoTableSeeder::class);
          $this->call(reclamacao_denuncia_resTableSeeder::class);
          $this->call(restaurante_serve_pratoTableSeeder::class);
+         $this->call(admin_elabora_respostaTableSeeder::class);    
     }
 }
