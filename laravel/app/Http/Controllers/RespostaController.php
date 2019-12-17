@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\DB;
 
 class RespostaController extends Controller
 {
-    public function createGet(Request $request){
+    public function createGet(Request $request)
+    {
         if ($request->session()->exists('loginAdmin')) {
             $mensagem = $request->session()->get('mensagem');
             $id_admin = $request->session()->get('id_admin');
@@ -35,28 +36,31 @@ class RespostaController extends Controller
 					    LEFT JOIN resposta_responde_reclamacao on reclamacao.id_reclamacao = resposta_responde_reclamacao.id_reclamacao
 					    LEFT JOIN resposta on resposta_responde_reclamacao.id_resposta = resposta.id_resposta
 				    WHERE resposta_responde_reclamacao.id_resposta IS NULL)
-                AND admin_gerencia_restaurante.id_admin = '.$id_admin.';',[1]);
+                AND admin_gerencia_restaurante.id_admin = ' . $id_admin . ';',
+                [1]
+            );
 
 
 
-            return view("resposta.create", compact(['reclamacoes','mensagem']));
+            return view("resposta.create", compact(['reclamacoes', 'mensagem']));
         } else {
             return redirect('/loginAdmin');
         }
     }
 
-    public function createPost(Request $request){
+    public function createPost(Request $request)
+    {
         if ($request->session()->exists('loginAdmin')) {
             $id_admin = $request->session()->get('id_admin');
             $id_reclamacao = $request->id_reclamacao;
             $resposta = $request->resposta;
             $teste = DB::table('resposta_responde_reclamacao')
-                        ->where('resposta_responde_reclamacao.id_reclamacao','=',$id_reclamacao)->get();
-            if(count($teste) > 0){
+                ->where('resposta_responde_reclamacao.id_reclamacao', '=', $id_reclamacao)->get();
+            if (count($teste) > 0) {
                 $mensagem = $request->session()->flash('mensagem', $teste);
                 return redirect("/createResposta");
-            }
-            else{
+            } else {
+                DB::beginTransaction();
                 $teste2 = DB::select(
                     'SELECT *
                     FROM reclamacao
@@ -64,26 +68,34 @@ class RespostaController extends Controller
                         JOIN admin_gerencia_restaurante on admin_gerencia_restaurante.id_restaurante = reclamacao_denuncia_res.id_restaurante
                         LEFT JOIN resposta_responde_reclamacao on reclamacao.id_reclamacao = resposta_responde_reclamacao.id_reclamacao
                         LEFT JOIN resposta on resposta_responde_reclamacao.id_resposta = resposta.id_resposta
-                    WHERE admin_gerencia_restaurante.id_admin = '.$id_admin.' and resposta_responde_reclamacao.id_resposta IS NULL
-                            and reclamacao.id_reclamacao = '.$id_reclamacao.'', [1]);
-                if(count($teste2) > 0){
-                    $resposta_id = DB::table('resposta')->insertGetId(['status'=>1,'descricao'=>$resposta]);
+                    WHERE admin_gerencia_restaurante.id_admin = ' . $id_admin . ' and resposta_responde_reclamacao.id_resposta IS NULL
+                            and reclamacao.id_reclamacao = ' . $id_reclamacao . '',
+                    [1]
+                );
+                if (count($teste2) > 0) {
+                    $resposta_id = DB::table('resposta')->insertGetId(['status' => 1, 'descricao' => $resposta]);
 
-                    DB::table('admin_elabora_resposta')
-                        ->insert(['id_admin'=>$id_admin,'id_resposta'=>$resposta_id,'data'=> new DateTime()]);
+                    $admin = DB::table('admin_elabora_resposta')
+                        ->insert(['id_admin' => $id_admin, 'id_resposta' => $resposta_id, 'data' => new DateTime()]);
 
-                    DB::table('resposta_responde_reclamacao')
-                        ->insert(['id_reclamacao'=>$id_reclamacao,'id_resposta'=>$resposta_id]);
+                    $resposta = DB::table('resposta_responde_reclamacao')
+                        ->insert(['id_reclamacao' => $id_reclamacao, 'id_resposta' => $resposta_id]);
+
+                    if ($resposta && $admin) {
+                        DB::commit();
+                    } else {
+                        DB::rollBack();
+                    }
+
                     $mensagem = $request->session()->flash('mensagem', count($teste2));
                     return redirect("/createResposta");
-
-                } else{
+                } else {
                     $mensagem = $request->session()->flash('mensagem', 'Você não tem permissao para responder essa reclamação, verifique seus dados');
                     return redirect("/createResposta");
                 }
             }
         } else {
-        return redirect('/loginAdmin');
-    }
+            return redirect('/loginAdmin');
+        }
     }
 }

@@ -42,10 +42,10 @@
     </ul>
     <ul id="dropReclamacao" class="dropdown-content">
             <li><a href="/createResposta">Responder Reclamação</a></li>
-            <li class="divider"></li>
+            <!-- <li class="divider"></li>
             <li><a href="/updateResposta">Alterar Resposta</a></li>
             <li class="divider"></li>
-            <li><a href="/deleteResposta">Excluir Resposta</a></li>
+            <li><a href="/deleteResposta">Excluir Resposta</a></li> -->
         </ul>
 <nav class="nav-extended">
     <div class="nav-wrapper">
