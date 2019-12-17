@@ -17,7 +17,10 @@ class ReclamacaoController extends Controller
 
             $pratos = null;
             if ($request->session()->exists('prato')) {
-                $pratos = DB::table("prato")->get();
+                $pratos = DB::table("restaurante_serve_prato")
+                ->join('prato','restaurante_serve_prato.id_prato','=','prato.id_prato')
+                ->where('restaurante_serve_prato.id_restaurante','=',$request->session()->get('prato'))
+                ->get();
             }
 
             $opcao = $request->session()->get("prato");

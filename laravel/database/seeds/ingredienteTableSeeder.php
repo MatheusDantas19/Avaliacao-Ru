@@ -15,44 +15,68 @@ class ingredienteTableSeeder extends Seeder
         DB::table('ingrediente')->insert(
             [
                 [
+                    'nome' => 'Café',
+                    'descricao' => 'Pó de café'
+                ],
+                [
+                    'nome' => 'Leite',
+                    'descricao' => 'leite de vaca integral'
+                ],
+                [
+                    'nome' => 'Achocolatado',
+                    'descricao' => 'Chocolate em pó adoçado'
+                ],
+                [
+                    'nome' => 'Açucar',
+                    'descricao' => 'Açucar cristal refinado'
+                ],
+                [
+                    'nome' => 'Pão',
+                    'descricao' => 'Pão assado de massa fina'
+                ],
+                [
+                    'nome' => 'Manteiga',
+                    'descricao' => 'Manteiga de vaca com sal'
+                ],
+                [
+                    'nome' => 'Arroz',
+                    'descricao' => 'Arroz branco tipo 1'
+                ],
+                [
+                    'nome' => 'Cebola',
+                    'descricao' => 'Cebola branca'
+                ],
+                [
+                    'nome' => 'Alho',
+                    'descricao' => 'Alho branco comum'
+                ],
+                [
                     'nome' => 'Sal',
                     'descricao' => 'Sal Branco Comum'
                 ],
                 [
+                    'nome' => 'Feijão',
+                    'descricao' => 'Feijão carioca comum'
+                ],
+                [
+                    'nome' => 'Abóbora',
+                    'descricao' => 'Abóbora regional'
+                ],
+                [
                     'nome' => 'Tomate',
-                    'descricao' => 'Tomate maduro'
+                    'descricao' => 'Tomate de salada'
                 ],
                 [
-                    'nome' => 'Extrato de Tomate',
-                    'descricao' => 'Molho de Tomate para macarrão e carnes'
+                    'nome' => 'Carne de Soja',
+                    'descricao' => 'Carne de soja pronta'
                 ],
                 [
-                    'nome' => 'Açucar',
-                    'descricao' => 'Açucar Branco Comum'
+                    'nome' => 'Carne de vaca',
+                    'descricao' => 'Corte de Carne Bovino'
                 ],
                 [
-                    'nome' => 'Macarão',
-                    'descricao' => 'Massa de macarão'
-                ],
-                [
-                    'nome' => 'Arroz',
-                    'descricao' => 'Arroz Branco Integral'
-                ],
-                [
-                    'nome' => 'Osso Buco',
-                    'descricao' => 'carne Bovina para cozinhar'
-                ],
-                [
-                    'nome' => 'Ovo',
-                    'descricao' => 'Ovo de galinha'
-                ],
-                [
-                    'nome' => 'Oléo',
-                    'descricao' => 'Oléo de Soja'
-                ],
-                [
-                    'nome' => 'Feijão Carioca',
-                    'descricao' => ''
+                    'nome' => 'Macarrão',
+                    'descricao' => 'Macarrão spaguetti numero 8'
                 ]
             ]
         );
