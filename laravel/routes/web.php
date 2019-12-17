@@ -113,3 +113,16 @@ Route::post('/pratos','PratoController@pratosPost');
 //create
 Route::get('/createResposta', 'RespostaController@createGet');
 Route::post('/createResposta', 'RespostaController@createPost');
+
+//relatorios
+
+Route::get('/relatorio1', 'RelatorioController@relatorio1Get');
+Route::post('/relatorio1', 'RelatorioController@relatorio1Post');
+
+Route::get('/relatorio2', 'RelatorioController@relatorio2Get');
+Route::post('/relatorio2', 'RelatorioController@relatorio2Post');
+
+Route::get('/relatorio3', 'RelatorioController@relatorio3Get');
+Route::post('/relatorio3', 'RelatorioController@relatorio3Post');
+
+
