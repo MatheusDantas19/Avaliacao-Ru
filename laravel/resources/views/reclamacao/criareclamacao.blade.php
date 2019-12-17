@@ -28,6 +28,29 @@ Deseja fazer uma reclamação?
                     </select>
                 </div>
 
+                <div class="col 6">
+                    <label>Dia Da Semana</label>
+                    <select name="dia" class="browser-default">
+                        <option value="" disabled selected>Escolha Dia</option>
+                        <option value="1">Segunda-Feira</option>
+                        <option value="2">Terça-Feira</option>
+                        <option value="3">Quarta-Feira</option>
+                        <option value="4">Quinta-Feira</option>
+                        <option value="5">Sexta-Feira</option>
+                        <option value="6">Sabado</option>
+                    </select>
+                </div>
+
+                <div class="col 6">
+                    <label>Turno</label>
+                    <select name="turno" class="browser-default">
+                        <option value="" disabled selected>Escolha Turno</option>
+                        <option value="1">Matutino</option>
+                        <option value="2">Vespertino</option>
+                        <option value="3">Noturno</option>
+                    </select>
+                </div>
+
                 <div class="col s8">
                     <button style="margin-top: 25px;" class="btn waves-effect waves-light" name="buscaPrato" type="submit">Pesquisar pratos
                         <i class="material-icons right">search</i>
