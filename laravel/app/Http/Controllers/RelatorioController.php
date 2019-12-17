@@ -76,19 +76,40 @@ class RelatorioController extends Controller
 
     public function relatorio3Get(Request $request){
         if($request->session()->exists('loginAdmin')){
-            return view('relatorio.relatorio3');
+            $id_restaurante = $request->session()->get('id_restaurante');
+            if($id_restaurante){
+                $sql =
+                'SELECT DISTINCT(prato.nome), COUNT(DISTINCT matricula) as qtdAlunos
+                from aluno_abre_reclamacao,prato,reclamacao_cita_prato,restaurante_serve_prato
+                where aluno_abre_reclamacao.id_reclamacao = reclamacao_cita_prato.id_reclamacao
+                    and reclamacao_cita_prato.id_prato = restaurante_serve_prato.id_prato
+                    and restaurante_serve_prato.id_prato = prato.id_prato
+                    and restaurante_serve_prato.id_restaurante = '.$id_restaurante.'
+                GROUP BY nome
+            ';
 
+            $pratos = DB::select($sql);
+
+
+            return view('relatorio.relatorio3',['pratos' => $pratos]);
+            } else {
+                $pratos = [];
+                return view('relatorio.relatorio3',['pratos' => $pratos]);
+            }
         }else{
-
+            return redirect('/loginAdmin');
         }
 
     }
 
     public function relatorio3Post(Request $request){
         if($request->session()->exists('loginAdmin')){
-
+            if($request->id_restaurante){
+                $request->session()->flash('id_restaurante',$request->id_restaurante);
+                return redirect('/relatorio3');
+            }
         }else{
-
+            return redirect('/loginAdmin');
         }
 
     }
