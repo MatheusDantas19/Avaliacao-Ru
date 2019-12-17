@@ -48,9 +48,13 @@ class RestauranteController extends Controller
 
     public function updateAdminGet (Request $request){
         if ($request->session()->exists('loginAdmin')) {
-            $Rus = DB::table('admin_gerencia_restaurante')
-                        ->rightjoin('restaurante','admin_gerencia_restaurante.id_restaurante','=','restaurante.id_restaurante')
-                        ->whereNull('id_admin')
+            $id_admin = $request->session()->get('id_admin');
+            $Rus = DB::table('restaurante')
+                        ->whereNotIn('id_restaurante', DB::table('admin_gerencia_restaurante')
+                                                            ->select('id_restaurante')
+                                                            ->where('id_admin',$id_admin)
+                                                            ->get()->pluck('id_restaurante')->toArray()
+                                                        )
                         ->get();
             $mensagem = $request->session()->get('mensagem');
             return view("restaurante.updateAdmin", compact(["Rus","mensagem"]));
@@ -94,8 +98,10 @@ class RestauranteController extends Controller
 
     public function updateGet (Request $request){
         if ($request->session()->exists('loginAdmin')) {
+            $id_admin = $request->session()->get('id_admin');
             $Rus = DB::table('admin_gerencia_restaurante')
                         ->join('restaurante','admin_gerencia_restaurante.id_restaurante','=','restaurante.id_restaurante')
+                        ->where('admin_gerencia_restaurante.id_admin',$id_admin)
                         ->get();
             $mensagem = $request->session()->get('mensagem');
             return view("restaurante.update", compact(["Rus","mensagem"]));
@@ -146,8 +152,10 @@ class RestauranteController extends Controller
 
     public function deleteAdminGet (Request $request){
         if ($request->session()->exists('loginAdmin')) {
+            $id_admin = $request->session()->get('id_admin');
             $Rus = DB::table('admin_gerencia_restaurante')
                         ->join('restaurante','admin_gerencia_restaurante.id_restaurante','=','restaurante.id_restaurante')
+                        ->where('admin_gerencia_restaurante.id_admin',$id_admin)
                         ->get();
             $mensagem = $request->session()->get('mensagem');
             return view("restaurante.deleteAdmin", compact(["Rus","mensagem"]));
@@ -174,8 +182,10 @@ class RestauranteController extends Controller
 
     public function deleteGet (Request $request){
         if ($request->session()->exists('loginAdmin')) {
+            $id_admin = $request->session()->get('id_admin');
             $Rus = DB::table('admin_gerencia_restaurante')
                         ->join('restaurante','admin_gerencia_restaurante.id_restaurante','=','restaurante.id_restaurante')
+                        ->where('admin_gerencia_restaurante.id_admin',$id_admin)
                         ->get();
             $mensagem = $request->session()->get('mensagem');
             return view("restaurante.delete", compact(["Rus","mensagem"]));
