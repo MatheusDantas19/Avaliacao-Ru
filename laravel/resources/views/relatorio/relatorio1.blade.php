@@ -6,8 +6,10 @@ Relatório 1
 <table class="highlight">
     <thead>
         <tr>
-            <th>Prato:</th>
-            <th>Numero de reclamações:</th>
+            <th>qtd_reclamação:</th>
+            <th>id_ingrediente:</th>
+            <th>nome:</th>
+            <th>descricao:</th>
         </tr>
     </thead>
 
@@ -15,8 +17,10 @@ Relatório 1
         <?php $i = 0; ?>
         @foreach($pratos as $p)
         <tr>
+            <td>{{$p->qtd_reclamacao}}</td>
+            <td>{{$p->id_ingrediente}}</td>
             <td>{{$p->nome}}</td>
-            <td>{{$p->count}}</td>
+            <td>{{$p->descricao}}</td>
         </tr>
         @endforeach
     </tbody>
