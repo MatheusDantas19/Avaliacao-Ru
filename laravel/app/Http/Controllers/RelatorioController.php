@@ -16,7 +16,7 @@ class RelatorioController extends Controller
             $sql = 'SELECT DISTINCT(nome), COUNT(id_reclamacao) as count FROM prato,reclamacao_cita_prato
             WHERE prato.id_prato = reclamacao_cita_prato.id_prato 
             GROUP BY(nome)
-            ORDER BY 1 DESC';// HAVING prato.id_prato = reclamacao_cita_prato.id_prato';
+            ORDER BY COUNT(id_reclamacao) DESC';// HAVING prato.id_prato = reclamacao_cita_prato.id_prato';
             // ORDER BY()
             $pratos = DB::select($sql);
             // $pratos = DB::table('reclamacao_cita_prato')
