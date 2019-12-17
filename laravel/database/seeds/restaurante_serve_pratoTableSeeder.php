@@ -16,422 +16,422 @@ class restaurante_serve_pratoTableSeeder extends Seeder
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'seg'
+                    'turno' => '1',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '3',
-                    'turno' => 'caf',
-                    'dia_semana' => 'seg'
+                    'turno' => '1',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '8',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '10',
-                    'turno' => 'jan',
-                    'dia_semana' => 'seg'
+                    'turno' => '3',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'ter'
+                    'turno' => '1',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '3',
-                    'turno' => 'caf',
-                    'dia_semana' => 'ter'
+                    'turno' => '1',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '8',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '10',
-                    'turno' => 'jan',
-                    'dia_semana' => 'ter'
+                    'turno' => '3',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qua'
+                    'turno' => '1',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '3',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qua'
+                    'turno' => '1',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '8',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '10',
-                    'turno' => 'jan',
-                    'dia_semana' => 'qua'
+                    'turno' => '3',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qui'
+                    'turno' => '1',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '3',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qui'
+                    'turno' => '1',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '8',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '10',
-                    'turno' => 'jan',
-                    'dia_semana' => 'qui'
+                    'turno' => '3',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'sex'
+                    'turno' => '1',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '3',
-                    'turno' => 'caf',
-                    'dia_semana' => 'sex'
+                    'turno' => '1',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '8',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '1',
                     'id_prato' => '10',
-                    'turno' => 'jan',
-                    'dia_semana' => 'sex'
+                    'turno' => '3',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '1',
-                    'turno' => 'caf',
-                    'dia_semana' => 'seg'
+                    'turno' => '1',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'seg'
+                    'turno' => '1',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '4',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'seg'
+                    'turno' => '2',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '9',
-                    'turno' => 'jan',
-                    'dia_semana' => 'seg'
+                    'turno' => '3',
+                    'dia_semana' => '1'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '1',
-                    'turno' => 'caf',
-                    'dia_semana' => 'ter'
+                    'turno' => '1',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'ter'
+                    'turno' => '1',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '4',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'ter'
+                    'turno' => '2',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '9',
-                    'turno' => 'jan',
-                    'dia_semana' => 'ter'
+                    'turno' => '3',
+                    'dia_semana' => '2'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '1',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qua'
+                    'turno' => '1',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '2',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qua'
+                    'turno' => '1',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '4',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qua'
+                    'turno' => '2',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '9',
-                    'turno' => 'jan',
-                    'dia_semana' => 'qua'
+                    'turno' => '3',
+                    'dia_semana' => '3'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '1',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qui'
+                    'turno' => '1',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '3',
-                    'turno' => 'caf',
-                    'dia_semana' => 'qui'
+                    'turno' => '1',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '4',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'qui'
+                    'turno' => '2',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '9',
-                    'turno' => 'jan',
-                    'dia_semana' => 'qui'
+                    'turno' => '3',
+                    'dia_semana' => '4'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '1',
-                    'turno' => 'caf',
-                    'dia_semana' => 'sex'
+                    'turno' => '1',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '3',
-                    'turno' => 'caf',
-                    'dia_semana' => 'sex'
+                    'turno' => '1',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '4',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '5',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '6',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '7',
-                    'turno' => 'alm',
-                    'dia_semana' => 'sex'
+                    'turno' => '2',
+                    'dia_semana' => '5'
                 ],
                 [
                     'id_restaurante' => '2',
                     'id_prato' => '9',
-                    'turno' => 'jan',
-                    'dia_semana' => 'sex'
+                    'turno' => '3',
+                    'dia_semana' => '5'
                 ],
             ]
         );
