@@ -9,8 +9,8 @@ services:
     volumes:
       - data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=app_development
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=laravel
   app:
     image: phpmyadmin/phpmyadmin:latest
     links:

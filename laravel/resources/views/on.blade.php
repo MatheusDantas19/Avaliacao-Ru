@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>FeedBack - Ru</title>
+    <title>Ru Restaurante Universitário </title>
 </head>
 
 <body>
@@ -46,7 +46,7 @@
     <nav class="nav-extended">
         <div class="nav-wrapper">
             <div class="container">
-                <a href="mainAdmin" class="brand-logo">Feedback-RU</a>
+                <a href="mainAdmin" class="brand-logo">RU Restaurante Universitário</a>
                 <a href="#" data-target="menu-responsive" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/logout">Sair</a></li>
@@ -122,6 +122,11 @@
                 </div>
             </div>
         </div>
+        {{-- imagem git--}}
+        <div class="carousel carousel-slider" style="height:600px;">
+             <a class="carousel-item" href="#one!"><img src="https://www.fastcommerce.com.br/lojas/00000001/images/GitHub_Octocat.png?cccfc=1"></a>
+        </div>  
+
         <div class="footer-copyright">
             <div class="container">
                 © 2019 Copyright Text

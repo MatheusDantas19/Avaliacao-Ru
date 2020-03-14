@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>FeedBack - Ru</title>
+    <title>Ru Restaurante Universitário</title>
 </head>
 
 <body>
@@ -43,10 +43,10 @@
     </ul>
     <ul id="dropReclamacao" class="dropdown-content">
         <li><a href="/createResposta">Responder Reclamação</a></li>
-        <!-- <li class="divider"></li>
+         <li class="divider"></li>
             <li><a href="/updateResposta">Alterar Resposta</a></li>
             <li class="divider"></li>
-            <li><a href="/deleteResposta">Excluir Resposta</a></li> -->
+            <li><a href="/deleteResposta">Excluir Resposta</a></li>
     </ul>
 
     <ul id="dropRelatorio" class="dropdown-content">
@@ -60,7 +60,7 @@
     <nav class="nav-extended">
         <div class="nav-wrapper">
             <div class="container">
-                <a href="mainAdmin" class="brand-logo">Feedback-RU</a>
+                <a href="mainAdmin" class="brand-logo">RU Restaurante Universitário</a>
                 <a href="#" data-target="menu-responsive" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/logoutAdmin">Sair</a></li>
@@ -76,7 +76,6 @@
                     <li><a class="dropdown-trigger" href="#!" data-target="dropPrato">Gerir Pratos<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropIngrediente">Gerir Ingredientes<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropRelatorio">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
-
                 </ul>
             </div>
         </div>
