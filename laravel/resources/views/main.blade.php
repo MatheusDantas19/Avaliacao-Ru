@@ -19,8 +19,8 @@
                 <i class="material-icons">menu</i>
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/signup">Sign Up</a></li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Cadastro</a></li>
+                <li><a href="/login">Login Aluno</a></li>
                 <li><a href="/quemsomos">Quem Somos</a></li>
                 <li><a href="/loginAdmin">Administrador</a></li>
             </ul>
@@ -30,8 +30,8 @@
 </nav>
 
 <ul class="sidenav" id="menu-responsive">
-    <li><a href="/signup">Sign Up</a></li>
-    <li><a href="/login">Login</a></li>
+    <li><a href="/signup">Cadastro</a></li>
+    <li><a href="/login">Login Aluno</a></li>
     <li><a href="/quemsomos">Quem Somos</a></li>
 </ul>
 
@@ -45,22 +45,29 @@
 <footer class="page-footer">
     <div class="container">
         <div class="row">
-            <div class="col l6 s12">
+            <div class="col l6 s12">   
                 <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                <p class="grey-text text-lighten-4"> texto aqui
                     content.</p>
             </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Equipe do projeto:</h5>
+            <div class="col l3 s12">
+                <h5 class="white-text">Equipe do Projeto</h5>
                 <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/TaniziaFagundes">Tanizia Fagundes</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://github.com/MatheusDantas19">Matheus Dantas</a>
                     </li>
-                    <li><a class="grey-text text-lighten-3" href="https://github.com/TaniziaFagundes">Tanizia
-                            Fagundes</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://github.com/kkkalil">Kalil Fernandes</a></li>
                     <li><a class="grey-text text-lighten-3" href="#!">Vinicius</a></li>
                 </ul>
             </div>
+
+            {{-- imagem git--}}
+            <div class="col l1 s2">
+                <ul class="carousel carousel-slider" style="width: 150px;">
+                    <a class="carousel-item" href="#one!"><img src="https://www.fastcommerce.com.br/lojas/00000001/images/GitHub_Octocat.png?cccfc=1"></a>
+                </ul>
+            </div>
+            
         </div>
     </div>
     <div class="footer-copyright">

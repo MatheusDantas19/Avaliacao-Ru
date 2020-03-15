@@ -1,6 +1,7 @@
 @extends('on')
 
 @section("conteudo")
+  
 <div class="carousel carousel-slider" style="height:600px;">
   <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
   <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
